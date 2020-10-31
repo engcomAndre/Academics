@@ -1,0 +1,37 @@
+body{
+	
+	font-family: 'Barlow Condensed', sans-serif;
+	
+}
+
+.row{
+	
+	background-color:#ffffff;
+	width:500px;
+	
+	
+}
+
+h1{
+	
+	font-size:100px;
+	
+}
+
+h2{
+	
+	margin-top:10;
+	
+}
+
+.fim{
+	
+	margin-bottom:10;
+	
+}
+
+.docs{
+	
+	margin-top:20;
+	
+}

@@ -1,0 +1,127 @@
+# Mostra os termos de uma Progressão 
+# Aritmética
+# :nt - Números de termos
+# :ti -  Termo Inicial
+# :ra - Razão
+aprenda prog_arit :nt :ti :ra
+    repita :nt-1
+    [
+        escreva :ti
+        escreva ",
+        escreva caracter 32
+        atribua "ti :ti + :ra
+    ]
+    mostre :ti
+fim
+
+# Mostra os termos de uma 
+# Progressão Geométrica
+# :nt - Números de termos
+# :ti -  Termo Inicial
+# :ra - Razão
+aprenda prog_geom :nt :ti :ra
+    repita :nt-1
+    [
+        escreva :ti
+        escreva ",
+        escreva caracter 32
+        atribua "ti :ti * :ra
+    ]
+    mostre :ti
+fim
+
+# Mostra quadrados perfeitos
+# iniciando por 1
+# :n - Número de itens mostrados
+aprenda quad_perf :n
+    atrlocal "x 1
+    repita :n-1
+    [
+        escreva :x*:x
+        escreva ",
+        escreva caracter 32
+        atribua "x :x+1
+    ]
+    mostre :x*:x
+fim
+
+# Mostra os termos de uma P.A. de 2ª ordem
+# :nt - Número de termos
+# :ti - Termo inicial
+# :ra - Razão
+# :rr - Razão da razão
+aprenda pa_2_ordem :nt :ti :ra :rr
+    repita :nt-1
+    [
+        escreva :ti
+        escreva ",
+        escreva caracter 32
+        atribua "ti :ti+:ra
+        atribua "ra :ra+:rr
+    ]
+    mostre :ti
+fim
+
+# Retorna a multiplicação de :a x :b
+aprenda multiplica :a :b
+    atrlocal "res 0
+    repita :a
+    [
+        atribua "res :res+:b
+    ]
+    saída :res
+fim
+
+# Retorna :a elevado a :n
+aprenda expo :a :n
+    atrlocal "res 1
+    repita :n
+    [
+        atribua "res :res*:a
+    ]
+    saída :res
+fim
+
+# Retorna o fatorial de :n
+aprenda fatorial :n
+    atrlocal "res 1
+    repita :n
+    [
+        atribua "res :res * :n
+        atribua "n :n-1
+    ]
+    saída :res
+fim
+
+# Retorna o fatorial de :n
+aprenda fat :n
+    atrlocal "res 1
+    repita :n
+    [
+        atribua "res :res*contevezes
+    ]
+    saída :res
+fim
+
+# Mostra termos da sequência de 
+# Fibonacci
+aprenda fibo :nt :ta :tb
+    mostre_cv :ta
+    mostre_cv :tb
+    repita :nt-3
+    [
+        mostre_cv :ta+:tb
+        atrlocal "aux :ta
+        atribua "ta :tb
+        atribua "tb :aux+:tb
+    ]
+    mostre :ta+:tb
+fim
+
+# Mostra :val seguido de uma
+# vírgula e um espaço
+aprenda mostre_cv :val
+    escreva :val
+    escreva ",
+    escreva caracter 32
+fim

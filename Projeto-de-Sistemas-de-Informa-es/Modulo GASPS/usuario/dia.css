@@ -1,0 +1,82 @@
+body{
+	
+	background-image:url('images/fundo.png');
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	font-family: 'Barlow Condensed', sans-serif;
+	
+}
+
+.c1{
+	
+	margin-top:20;
+	
+	/*
+	azul = #3333cc
+	rosa = #ff0066
+	*/
+	
+}
+
+.c1-l1{
+	
+	width:290px;
+	margin-top:10;
+	
+}
+
+.c1-l2{
+	
+	width:290px;
+	margin-top:10;
+	margin-left:5;
+	
+}
+
+.txtnome{
+	
+	color:#ffffff;
+	
+}
+
+.c2{
+	
+	margin-top:20;
+	margin-left:20;
+	
+}
+
+.txtquestao{
+	
+	margin-top:5;
+	margin-left:5;
+	
+}
+
+.c2-l1{
+	
+	background-color:#ffffff;
+	
+}
+
+.bot{
+	
+	margin-right:20;
+	
+}
+
+
+.btn-primary{
+	
+	height:100px;
+	width:200px;
+	margin-top:20;
+	margin-left:20;
+	
+}
+
+.dias{
+	
+	background-color:#ffffff;
+	
+}

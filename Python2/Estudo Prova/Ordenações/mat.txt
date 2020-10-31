@@ -1,0 +1,70 @@
+
+view sourceprint?
+01.
+def addMatrix(A,B):
+02.
+""" Soma duas matrizes."""
+03.
+sizeL=len(A)
+04.
+sizeC=len(A[0])
+05.
+C=nullMatrix(sizeL,sizeC)
+06.
+# Soma
+07.
+for i in range(sizeL):
+08.
+for j in range(sizeC):
+09.
+C[i][j]=A[i][j]+B[i][j]
+10.
+return C
+11.
+ 
+12.
+def prodMatrix(A,B):
+13.
+"""Multiplica duas matrizes."""
+14.
+sizeL=len(A)
+15.
+sizeC=len(A[0])
+16.
+C=nullMatrix(sizeL,sizeC)
+17.
+# Multiplica
+18.
+for i in range(sizeL):
+19.
+for j in range(sizeC):
+20.
+val=0
+21.
+for k in range(len(B)):
+22.
+val = val + A[i][k]*B[k][j]
+23.
+C[i][j]=val
+24.
+return C
+25.
+ 
+26.
+def transposeMatrix(M):
+27.
+"""Calcula a transposta de uma matriz."""
+28.
+aux=[]
+29.
+for j in range(len(M[0])):
+30.
+linha=[]
+31.
+for i in range(len(M)):
+32.
+linha.append(M[i][j])
+33.
+aux.append(linha)
+34.
+return aux

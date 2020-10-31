@@ -1,0 +1,114 @@
+package controller;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
+
+import javafx.scene.AmbientLight;
+import model.Estatistics;
+import view.Configure;
+
+public class CSCAN {
+	//data SCAN algorithm
+	private LinkedList<Integer>callResquisitionsOrder ;		
+	private LinkedList<Integer>distances ;
+	private int finalDisc;
+	public int scheduler;
+
+	public CSCAN(Configure configure,LinkedList<Integer>Process){
+		this.callResquisitionsOrder = new LinkedList<>();
+		this.distances = new LinkedList<>();		
+		this.finalDisc = configure.getQntdCiliders();
+		this.schedulerCSCAN(configure.getDiscArmInitialCilinder(), Process);
+	}
+
+	public LinkedList<Integer> getCallRequisitionOrder(){		
+		return callResquisitionsOrder;
+	}
+
+	public LinkedList<Integer> getDistances(){
+		return distances;
+	}
+
+	private void schedulerCSCAN(int atualPosition,LinkedList<Integer>Process) {
+		Process.add(0);
+		Process.add(finalDisc-1);
+		Process.sort(null);		
+
+		int i = 0;
+		LinkedList<Integer> minList = new LinkedList<>();
+		LinkedList<Integer>maiorList  = new LinkedList<>();
+
+		while(atualPosition >= Process.get(i) && i < Process.size()) {
+			minList.addLast(Process.get(i));			
+		}
+		while(atualPosition < Process.get(i) && i < Process.size()) {
+			maiorList.addLast(Process.get(i));			
+		}
+		
+		//fatiando listas
+		
+		
+		LinkedList<Integer> list = null;
+
+		int maior = maiorList.getFirst() - atualPosition;
+		int menor = atualPosition - minList.getLast();
+
+
+		if(menor >= maior) {//subindo
+			maiorList.addAll(minList);
+			list = maiorList;					
+			maiorList.addAll(minList);
+			System.out.println("subindo");
+			System.out.println(maiorList);
+
+		}
+		else {//descendo
+			Collections.sort(minList, new Comparator<Object>() {
+				public int compare(Object num1, Object num2) {                
+					return (Integer)num1 >= (Integer)num2?-1:1;
+				}
+			});
+
+			Collections.sort(maiorList, new Comparator<Object>() {
+				public int compare(Object num1, Object num2) {                
+					return (Integer)num1 >= (Integer)num2?-1:1;
+				}
+			});
+			System.out.println("descendo");			
+			minList.addAll(maiorList);				
+			list = minList; 		
+		}
+
+		while(!list.isEmpty()) {		
+			callResquisitionsOrder.addLast(atualPosition);			
+			distances.addLast(Math.abs(atualPosition - list.getFirst()));			
+			atualPosition = list.removeFirst();			
+		}
+		
+		int sum = 0;
+		for (i = 1;i< callResquisitionsOrder.size();i++) {
+			sum+= Math.abs(callResquisitionsOrder.get(i-1) - callResquisitionsOrder.get(i));
+		}
+		System.out.println("sum = "+sum);		
+		System.out.println(callResquisitionsOrder.size());
+	}
+
+
+	public String toString() {
+		String result = "Estatisticas para o Algoritmo de CSCAN"
+				+ "\n"+"Distancia Total = "+this.scheduler
+				+ "\n"+"Distancia Media = "+this.scheduler/(double)(callResquisitionsOrder.size())  
+				+ "\n"+"Tempo Medio     = "+(this.scheduler/(double)callResquisitionsOrder.size())*Configure.seekTime
+				+ "\n"+"Variancia       = "+(1+(int)Estatistics.variance((this.scheduler/(double)callResquisitionsOrder.size()), distances))
+				+ "\n"+"Desvio Padrão   = "+String.format("%.2f", (Estatistics.standardDeviation(distances)))
+				+ "\n"+"Requisições       \n"+callResquisitionsOrder.toString()
+				;
+		return result; 
+	}
+
+}
+
+

@@ -1,0 +1,392 @@
+
+#Modularização do procedimento test
+#Desenha a mira no local atual da tartaruga 0
+aprenda mod01
+mudecl 0
+mudeel 10  
+pt 50 
+pf 100 
+pt 50 
+pe 90 
+pt 50 
+pf 100 
+pt 50 
+pd 90 
+mudeel 5 
+círculo 50  
+
+fim
+#Modularização do procedimento test
+#Apaga pintando a figura com a cor do fundo
+aprenda mod02
+mudecl cordofundo  
+mudeel 12  
+pt 50 
+pf 100 
+pt 50 
+pe 90 
+pt 50 
+pf 100 
+pt 50
+pd 90 
+mudeel 7 
+círculo 50
+fim
+
+
+#Procedimento que usa os modulos de test
+#Desenha e Apagua a Mira
+aprenda mod_01_02
+animado
+mod01
+veranimado
+mod02
+
+fim
+
+
+#Desloca Mira na Tela
+aprenda mira
+un
+escondetat
+mudepos posmouse
+ul
+mod_01_02
+
+fim
+
+aprenda fuga_tat
+
+un
+mudedireção sorteie 30
+pf sorteie 1 
+
+fim
+
+
+
+aprenda mate_tat :tat
+#Procedimento Retira a Tartaruga da Tela e Imprime Uma Imagem na sua posição
+      escondetat
+      un pe 90 pf 25 pd 90 pt 35 
+      carimg "splash01.png
+      toquemp3 "Shotgun-ShootReload.mp3
+      pf 35 pe 90 pt 25 pd 90
+fim
+
+aprenda fuga_tat1
+    un
+    mudedireção sorteie 180
+    pf sorteie 5 
+fim
+
+
+aprenda mud_rp
+
+                        atat 2    un muderoupa 1    escondetat mudexy sorteie 300 sorteie 300
+                        atat 3    un muderoupa 2    escondetat mudexy sorteie 300 sorteie 300
+                        atat 4    un muderoupa 3    escondetat mudexy sorteie 300 sorteie 300
+                        atat 5    un muderoupa 4    escondetat mudexy sorteie 300 sorteie 300
+                        atat 6    un muderoupa 5    escondetat mudexy sorteie 300 sorteie 300
+                        atat 7    un                              escondetat mudexy sorteie 300 sorteie 300          
+                        atat 8    un muderoupa 6    escondetat mudexy sorteie 300 sorteie 300
+                        atat 9    un muderoupa 7    escondetat mudexy sorteie 300 sorteie 300
+                        atat 10  un muderoupa 1    escondetat mudexy sorteie 300 sorteie 300
+                        atat 11  un muderoupa 2    escondetat mudexy sorteie 300 sorteie 300
+                        atat 12  un muderoupa 3    escondetat mudexy sorteie 300 sorteie 300
+                        atat 13  un muderoupa 1    escondetat mudexy sorteie 300 sorteie 300
+                        atat 14  un muderoupa 2    escondetat mudexy sorteie 300 sorteie 300
+                        atat 15  un muderoupa 3    escondetat mudexy sorteie 300 sorteie 300
+                        atat 16  un muderoupa 4    escondetat mudexy sorteie 300 sorteie 300
+\                       atat 17  un muderoupa 5    escondetat mudexy sorteie 300 sorteie 300
+                        atat 18  un                              escondetat mudexy sorteie 300 sorteie 300          
+                        atat 19  un muderoupa 6    escondetat mudexy sorteie 300 sorteie 300
+                        atat 20  un muderoupa 7    escondetat mudexy sorteie 300 sorteie 300
+                        atat 21  un muderoupa 1    escondetat mudexy sorteie 300 sorteie 300
+                        atat 22  un muderoupa 2    escondetat mudexy sorteie 300 sorteie 300
+                        atat 23  un muderoupa 3    escondetat mudexy sorteie 300 sorteie 300
+
+
+
+fim
+
+
+
+aprenda comp_pos
+   atrlocal "prec 100
+    pf 25 pd 8
+    atr "posx     inteiro(elem 1 pos)/:prec 
+    atr "posy     inteiro(elem 2 pos)/:prec
+    atr "posxm  inteiro(elem 1 posmouse)/:prec
+    atr "posym  inteiro(elem 2 posmouse)/:prec
+           
+          
+                                   
+#escreva :posx escreva car 32
+#escreva :posy escreva car 32
+#escreva :posxm escreva car 32
+#escreva :posym escreva car 32 mo car 32
+
+fim
+
+aprenda main1
+                                                                                                  
+fim
+
+aprenda contagem :mun
+     un
+     escondetat
+     mudepos  [ -200 -200] 
+     mudedireção 0
+     un pe 90 pf 25 pd 90 pt 25 
+     carimg "splash02.png
+     pf 25 pe 90 pt 20 pd 90
+     mudefonte 25
+     mudecl branco
+     ul
+     rotule :mun
+
+fim
+
+
+aprenda contagemm :muni
+    un
+    escondetat 
+    mudepos [- 130 -191]
+    mudedireção 0      
+    pe 90 pf 25 pd 90 pt 35      
+    carimg "shotgun.png   
+    pd 45 pf 15 pe 45 pf 15 
+    mudecl branco
+    rotule :muni 
+fim
+
+aprenda main0
+  comlimite
+   atrlocal "tat  9
+   atrlocal "mun 20
+   atrlocal "muni 0
+   mud_rp
+  contador 5
+                        
+enquanto    [não :tat = 0] [   atat  0 mira
+                                                 contagemm :muni  
+                                                 contagem :tat
+                                                 atat :tat    
+                                                 mostretat fuga_tat comp_pos espere 6
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+                                                                   #toquemp3" (som de arma em falso)
+                                                       se :tat = 1 [ contagem 0 
+                                                                          mensagem 
+                                                                          [Você Agora é um Serial Killer de Tartarugas Nível 1] 
+                                                                           espere 300
+                                                                          Leia [DIGITE QUALQUER TECLA PARA CONTINUAR DESEJA IR AO PRÓXIMO NÍVEL OU "X" PARA SAIR] "aval
+                                                                          SE (ou :aval =  120 :aval =  88 )[ADEUS] [main_2]
+
+
+                                                                          ]
+                                                          
+                                                     se étecla? 
+                                                     [se leiacar  =32 
+                                                            [atribua "muni :muni+1
+                                                             toquemp3 "Shotgun-ShootReload.mp3]     
+                                                      se fimcontador? [mudecf cordofundo
+                                                                                      contagemm :muni  
+                                                                                      contagem :tat
+                                                                                      ]                                                 
+                                                      ]                          
+                                                      ]                               
+
+
+
+
+fim
+
+aprenda main
+
+ [main0]
+
+fim
+
+aprenda main_2
+ comlimite
+   atrlocal "tat  9
+   atrlocal "mun 20
+   atrlocal "muni 0
+   mud_rp
+   contador 5                     
+enquanto    [não :tat = 0] [   atat  0 mira
+                                                 contagemm :muni  
+                                                 contagem :tat
+                                                 atat :tat    
+                                                 mostretat fuga_tat comp_pos espere 3
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+                                                              atat :tat+1    
+                                                 mostretat fuga_tat comp_pos espere 3
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+
+                                                       se :tat = 1 [ contagem 0 
+                                                                          mensagem 
+                                                                          [Você Agora é um Serial Killer de Tartarugas Nível 2] 
+                                                                           espere 300
+                                                                          Leia [DIGITE QUALQUER TECLA PARA CONTINUAR DESEJA IR AO PRÓXIMO NÍVEL OU "X" PARA SAIR] "aval
+                                                                          SE (ou :aval =  120 :aval =  88 )[ADEUS] [main3]
+
+
+                                                                          ]
+                                                          
+                                                     se étecla? 
+                                                     [se leiacar  =32 
+                                                            [atribua "muni :muni+1
+                                                             toquemp3 "Shotgun-ShootReload.mp3]     
+                                                    se fimcontador? [mudecf cordofundo 
+                                                                                     contagemm :muni  
+                                                                                     contagem :tat  
+                                                                                    ]                                                 
+                                                      ]                          
+                                                      ]                               
+
+
+ 
+
+fim
+
+
+aprenda main_3
+comlimite
+   atrlocal "tat  9
+   atrlocal "mun 20
+   atrlocal "muni 0
+   mud_rp
+   contador 5                     
+enquanto    [não :tat = 0] [   atat  0 mira
+                                                 contagemm :muni  
+                                                 contagem :tat
+                                                 atat :tat    
+                                                 mostretat fuga_tat comp_pos espere 1
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+                                                  atat :tat+1    
+                                                 mostretat fuga_tat comp_pos espere 1
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+                                                        atat :tat+2    
+                                                 mostretat fuga_tat comp_pos espere 1
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+                                                      
+
+                                                       se :tat = 1 [ contagem 0 
+                                                                          mensagem 
+                                                                          [Você Agora é um Serial Killer de Tartarugas Nível 2] 
+                                                                           espere 300
+                                                                          Leia [DIGITE QUALQUER TECLA PARA CONTINUAR DESEJA IR AO PRÓXIMO NÍVEL OU "X" PARA SAIR] "aval
+                                                                          SE (ou :aval =  120 :aval =  88 )[ADEUS] [Mensagem [Vai estudar Verminoso!!!!!]]
+
+
+                                                                          ]
+                                                          
+                                                     se étecla? 
+                                                     [se leiacar  =32 
+                                                            [atribua "muni :muni+1
+                                                             toquemp3 "Shotgun-ShootReload.mp3]     
+                                                    se fimcontador? [mudecf cordofundo 
+                                                                                     contagemm :muni  
+                                                                                     contagem :tat  
+                                                                                    ]                                                 
+                                                      ]                          
+                                                      ]                               
+comlimite
+   atrlocal "tat  9
+   atrlocal "mun 20
+   atrlocal "muni 0
+   mud_rp
+   contador 5                     
+enquanto    [não :tat = 0] [   atat  0 mira
+                                                 contagemm :muni  
+                                                 contagem :tat
+                                                 atat :tat    
+                                                 mostretat fuga_tat comp_pos espere 1
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+                                                              atat :tat+1    
+                                                 mostretat fuga_tat comp_pos espere 1
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]               
+                                                        atat :tat+2    
+                                                 mostretat fuga_tat comp_pos espere 1
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1                                                                                 
+
+                                                       se :tat = 1 [ contagem 0 
+                                                                          mensagem 
+                                                                          [Você Agora é um Serial Killer de Tartarugas Nível 2] 
+                                                                           espere 300
+                                                                          Leia [DIGITE QUALQUER TECLA PARA CONTINUAR DESEJA IR AO PRÓXIMO NÍVEL OU "X" PARA SAIR] "aval
+                                                                          SE (ou :aval =  120 :aval =  88 )[ADEUS] [main3]
+
+
+                                                                          ]
+                                                          
+                                                     se étecla? 
+                                                     [se leiacar  =32 
+                                                            [atribua "muni :muni+1
+                                                             toquemp3 "Shotgun-ShootReload.mp3]     
+                                                    se fimcontador? [mudecf sorteie 5+1 
+                                                                                     contagemm :muni  
+                                                                                     contagem :tat  
+                                                                                    ]                                                 
+                                                      ]                          
+                                                      ]                               
+
+
+
+
+
+fim

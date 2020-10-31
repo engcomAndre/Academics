@@ -1,0 +1,48 @@
+aprenda desl :fator
+un
+se leiacar = -37 [pe 90 pf :fator pd 90]
+se leiacar = -39 [pd 90 pf :fator pe 90]
+se leiacar = -38 [pf :fator]
+se leiacar = -40 [pt :fator]
+desl :fator
+
+fim
+
+aprenda tab
+comlimite 
+semeixo
+ld 
+un ]
+mudepos [295 -295] 
+ul 
+mudeel 15  
+mudecl azul 
+repita 4 [pf 590 pe 90 ] 
+un 
+pd 45 
+pf 100 
+mudecl verde 
+pinte
+
+fim
+
+aprenda ret
+
+
+fim
+
+aprenda mira
+se leiamouse = 0 [ul
+                                  mudepos posmouse 
+                                  círculo 50 
+                                  mudeel 5 
+                                  pt 50 pf 100 pt 50 pe 90 pt 50 pf 100 pt 50 
+                                  mudeel 3
+                                  espere 10
+                                 ub
+                                  círculo 50 
+                                  pt 50 pf 100 pt 50 pe 90 pt 50 pf 100 pt 50
+                                  ]
+mira
+
+fim

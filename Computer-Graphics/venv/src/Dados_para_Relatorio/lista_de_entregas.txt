@@ -1,0 +1,30 @@
+(Entregue - Revisar) - Ajuste de Gamma
+(Entregue - Revisar) - Composição de alpha
+(Entregue - Revisar) - Ray-Tracing utilizando somente a cor do objeto no píxel
+
+(Implementado ) - Caso ortográfico
+(Implementado )		- esfera
+(Implementado )		- triângulo
+(Implementado )		- polígono qualquer
+(Implementado ) -Caso oblíquo
+(Implementado )		- esfera
+(Implementado )		- triângulo
+(Implementado )		- polígono qualquer
+
+- Iluminação: escolher um dos tipos de projeção e aplicar. Nesses casos devem ser utilizados mais de 1 objeto na cena.
+
+    - Lambert
+    - Blinn-phong
+    - cor do ambiente
+    - multiplas fontes de luz
+
+- Transformações
+	- Transformações 2D:
+		- Descrever as transformações aplicadas dentro do plano da imagem no algoritmo ray-tracing. (escolher um dos tipos de projeção)
+			- Cisalhamento
+			- Redimensionamento
+			- Rotação
+			- Reflexão
+
+		- Composição de transformações
+		- Decomposição de autovalores

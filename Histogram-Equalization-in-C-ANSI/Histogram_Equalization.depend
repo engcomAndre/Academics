@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1522436892 source:e:\histogram-equalization\main.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<locale.h>
+
+1522622775 source:c:\users\andré vieira\desktop\semb\main.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<locale.h>
+

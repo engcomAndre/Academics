@@ -1,0 +1,54 @@
+aprenda mova_mira
+       un
+       escondetat
+       mudepos posmouse                                   
+                                      mudecl branco
+                                      mudeel 10  
+                                          círculo 10 
+                                           pinte   
+                                         pt 50 pf 100 pt 50 pe 90 pt 50 pf 100 pt 50 pd 90
+                                           
+                                      ul
+                                      mudecl preto
+                                      mudeel 8  
+                                          círculo 50
+                                      
+                                          pt 50 pf 100 pt 50 pe 90 pt 50 pf 100 pt 50 pd 90
+                                  
+
+mova_mira
+fim
+
+aprenda kill_tat
+      un
+      atrlocal "tat 1
+      se leiamouse = 1 [atribua "tat :tat+1
+                                        toquemp3 "Shotgun-ShootReload.mp3
+                                        pd 45
+                                        pt 30
+                                        pe 45
+                                        carimg "splash01.png
+                                        pf 30
+                                        pe 45                                        
+                                        escondetat
+                                        semtat :tat
+                                                                 
+
+]
+
+fim
+
+aprenda runout_tat
+      un
+      mudedireção sorteie 90
+      pf sorteie 50+30
+fim
+
+
+
+
+
+aprenda testel
+se (e leiamouse = 1 pos = posmouse) [pf 100]
+
+fim

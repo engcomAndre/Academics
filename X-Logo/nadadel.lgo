@@ -1,0 +1,10 @@
+aprenda opmo
+   
+    pf 25 pd 8
+    atr "posx     inteiro(elem 1 pos)/:prec 
+    atr "posy     inteiro(elem 2 pos)/:prec
+    atr "posxm  inteiro(elem 1 posmouse)/:prec
+    atr "posym  inteiro(elem 2 posmouse)/:prec
+           se (e :posx = :posxm   :posy = :posym) [enquanto [não leiamouse = 1 ] [opmo]rotule "dead]      
+
+fim

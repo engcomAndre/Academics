@@ -1,0 +1,66 @@
+aprenda desl :fator
+atat 1 
+mudeel 15
+un
+se leiacar = -37 [pe 10]
+se leiacar = -39 [pd 10]
+se leiacar = -38 [pf :fator]
+se leiacar = -40 [pt :fator]
+se leiamouse = 0 [mudepos posmouse mira]
+desl :fator
+mira
+un
+fim
+
+aprenda tab
+comlimite 
+semeixo
+ld 
+un 
+mudepos [400 -300]
+ul 
+mudeel 15  
+mudecl azul 
+
+repita 2 [pf 600 pe 90 pf 800 pe 90 ] 
+un
+pe 45 
+pf 250 
+mudecl verde 
+pinte
+
+fim
+
+aprenda mira
+
+atat 0 escondetat
+un
+se leiamouse = 1 [toquemp3 "Shotgun-ShootReload.mp3
+                                  atribua "mun :mun + 1
+                                  se :mun = 6 [atribua "mun 0 repita 6 [toquemp3 "ShotGun-Cocking.mp3]]]    
+se leiamouse = 0 [mudepos posmouse
+                                    carregueimagem "alvo00.png                          
+                                    carregueimagem "alvo.png 
+                                     carregueimagem "alvo00.png                      
+                                  ] [carregueimagem "alvo.png]
+
+   
+mo :mun               
+mira
+
+
+fim
+aprenda alvo
+              círculo 50
+              ul
+              pt 50 pf 100 pt 50 pe 90 pt 50 pf 100 pt 50
+               mudeel 3
+                                        
+                                        mudecl branco
+                                        mudeel 15
+             círculo 50
+              ul
+              pt 50 pf 100 pt 50 pe 90 pt 50 pf 100 pt 50
+                                       
+
+fim

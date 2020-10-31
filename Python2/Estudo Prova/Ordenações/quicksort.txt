@@ -1,0 +1,15 @@
+ >>> def quicksort(l):
+   2         if l:
+   3                 left = [x for x in l if x < l[0]]
+   4                 right = [x for x in l if x > l[0]]
+   5                 if len(left) > 1:
+   6                         left = quicksort(left)
+   7                 if len(right) > 1:
+   8                         right = quicksort(right)
+   9                 return left + [l[0]] * l.count(l[0]) + right
+  10         return []
+  11 
+  12 >>> quicksort(lista)
+  13 [0, 1, 2, 3, 3, 4, 5, 7, 8, 8, 9, 9, 12, 13, 85, 99]
+  14 >>> lista
+  15 [1, 5, 3, 9, 2, 4, 8, 7, 3, 9, 8, 12, 13, 0, 99, 85]

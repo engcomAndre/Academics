@@ -1,0 +1,28 @@
+aprenda pega
+comlimite
+atribua "tat 3
+atat 0 un pf 300
+parasempre 
+                         [atat 0 un mostretat  pf 25 pd 8 pf 25 pe 8 
+                          #mudedireção sorteie 150
+                         atribua "pos1 pos
+                         atat 1 un mostretat  pf 5 pd 8 pf 5 pe 8 
+                         #mudedireção direçãopara  :pos1 
+                         atribua "pos2 pos
+                         atat 2 un mostretat  pf 10 pd 8 pf 10 pe 8 
+                         #mudedireção direçãopara :pos2
+                         atribua "pos3 pos
+se :pos1 = :pos2  [atribua "tat :tat+1 atat :tat mostretat mov :tat
+
+                                                           ]
+                         
+]
+                    
+
+
+
+fim
+
+aprenda mov :tat
+mudedireção sorteie 180 pf 20/:tat pd 8 pf 20/:tat pe 8 
+fim

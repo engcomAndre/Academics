@@ -1,0 +1,552 @@
+## fibonacci recursivo:####################
+
+def fibonacci(n):
+    if n < 2:
+        return n
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+
+for x in range(10):
+    fibonacci(x)
+
+
+############################################
+
+#### fibonacci limitado #############
+
+atual=0
+ant=0
+prox=1
+q=int(input(maximo valor))
+while(prox<q):
+	print "prox"
+	ant=atual
+	atual=prox
+	prox=ant +atual
+
+
+
+#######################################
+
+
+
+
+######fatorial recursivo ##############
+def factorial( n ):
+   if n <1:   # base case
+       return 1
+   else:
+       return n * factorial( n - 1 )  # recursive call
+def fact(n):
+       for i in range(1, n+1 ):
+               print "%2d! = %d" % ( i, factorial( i ) )
+
+####################################################
+
+
+#### ackermann   ###########################
+def naive_ackermann(m, n):
+    global calls
+    calls += 1
+    if m == 0:
+        return n + 1
+    elif n == 0:
+        return naive_ackermann(m - 1, 1)
+    else:
+        return naive_ackermann(m - 1, naive_ackermann(m, n - 1))
+
+################################################################
+
+##########raiz 2q######################################################################
+a=input("Digite o coeficiente 'a'= ")
+if a == 0:
+    a=input("O valor de a não pode ser nulo, digite um valor maior ou menor que 0 = ")
+b=input("Digite o coeficiente 'b'= ")
+c=input("Digite o coeficiente 'c'= ")
+print "a = %s" % (a)
+print "b = %s" % (b)
+print "c = %s" % (c)
+# ax²+bx + c
+# delta = b²-4ac
+# (-b +/- sqrt delta)/2a
+delta = "b^2-4ac = %d" % ((pow(b,2))-4*a*c)
+print delta
+resultado_delta = (pow(b,2))-4*a*c
+if resultado_delta < 0:
+    print "Delta Negativo, Equação nao apresenta soluções reais."
+    import sys
+    sair=1
+    saida=input("Para sair digite 'sair' e aperte enter. ")
+    if saida == 1:
+        sys.exit()
+if resultado_delta == 0:   #acrescentei aqui o caso de se o delta for igual a 0.
+    print "Delta nulo. Equação apresenta apenas uma solução real."
+    print "%s / 2*%s" % (-b,a)
+    print "%s / 2*%s = %d" % (-b,a,(-b)/2*a)
+    sair=1
+    saida=input("Para sair digite 'sair' e aperte enter. ")
+    if saida == 1:
+        sys.exit()        
+else:
+    import math
+    print "%sx^2 + (%s) + (%s) = 0" % (a,b,c)
+    float(resultado_delta)
+    raiz_quadrada = math.sqrt(resultado_delta)
+    cima_bsk_pos=(-b+raiz_quadrada)
+    cima_bsk_neg=(-b-raiz_quadrada)
+    baixo_bsk=(2*a)
+    resultado_raiz_pos= "%s / %s" % (cima_bsk_pos,baixo_bsk)
+    resultado_raiz_neg= "%s / %s" % (cima_bsk_neg,baixo_bsk)
+    print "Para -(%s) + %s / 2*a temos: %s" % (b,raiz_quadrada,resultado_raiz_pos)
+    print "Para -(%s) - %s / 2*a temos: %s" % (b,raiz_quadrada,resultado_raiz_neg)
+    print "Recomendo tomar duas casas apos a virgula."
+    saida=input("Para sair digite 'sair' e aperte enter. ")
+    if saida == 1:
+        sys.exit()   
+
+
+###################################################################################################
+
+
+
+
+##############################primos################################################
+
+
+valor=int(input("bla bla bla"))
+i=2
+numero_d=0
+numero_c=0
+while(i<=valor/2):
+	numero_c+=1
+	if valor %i ==0:
+		numero_d+=1
+	i+=1
+if numero_d ==0:
+	print "numero fornecido e primo"
+else:
+	print"o numero fornecido possui".numero_d"divisores"
+
+print"numero de comparacoes realizadas=".numero_c
+
+
+###############################################################################
+
+### 0,n,1,n-1,,,,,##############################################################
+
+
+i=0
+q=int(input("valor maximo"))
+while i<q:
+	print i.q -i
+	i+=1
+
+##########################################################################
+
+############ jogo do acerto #######################
+
+import random
+random.seed()
+valor=random.randint(1.99)
+chute=0
+tentarivas=0
+
+while(chute!=valor):
+	chute=int(input(paltite))
+	tentativas+=1
+	if (chute==valor):
+		print"vc acertou",tentativas,"tentativas"
+	elif(chute<valor):
+		print"Errou para menos",tentativas
+	else:
+		print"Errou para mais",tentativas
+		
+
+
+####################################################
+
+
+
+######### merge sort #######################
+def mergeSort(alist):
+    print("Splitting ",alist)
+    if len(alist)>1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+
+        i=0
+        j=0
+        k=0
+        while i<len(lefthalf) and j<len(righthalf):
+            if lefthalf[i]<righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+
+        while i<len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+
+        while j<len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+
+alist = [54,26,93,17,77,31,44,55,20]
+mergeSort(alist)
+print(alist)
+################################################
+
+	 ORDENAÇÃO
+
+########quicksort###################
+
+from datetime import datetime
+import random
+random.seed()
+ 
+def quicksort(lista):
+        L = []
+        R = []
+        # caso basico
+        if len(lista)<=1:
+                return lista
+        # calcula a chave
+        chave = lista[len(lista)/2]
+        # 
+        for i in lista:
+                if i < chave:
+                        L.append(i)
+                if i > chave:
+                        R.append(i)
+        #finaliza
+    return quicksort(L)+[chave]+quicksort(R)
+ 
+# entrada da dados
+l = input("Digite o tamanho da lista ")
+A = []
+i = 0
+ing = datetime.now()
+while i<l:
+#   x = random.randint(1,10*l)
+#   if x not in A:
+#       A.append(x)
+#       i += 1
+    A.append(l-i) # usar essa geração para testar com valores muito altos
+    i += 1
+fig = datetime.now()
+ger = fig - ing
+inicio = datetime.now()
+B = quicksort(A)
+fim = datetime.now()
+duracao = fim - inicio
+print "-----------"
+print "Original"
+print A
+print "-----------"
+print "Ordenada "
+print B
+print "Tempo (ms) : ","%2.8f"%float(duracao.seconds * 1000 + \
+    float(duracao.microseconds)/1000)
+print "Tempo (ms) para gerar a lista : ","%2.8f"%float(ger.seconds * 1000 + \
+    float(ger.microseconds)/1000)
+
+
+#######################################################
+
+
+###################borbulhamento################################
+
+from datetime import datetime
+import random
+
+os.system("clear")
+random.seed()
+# entrada da dados
+l = input("Digite o tamanho da lista  ")
+A = []
+i = 0
+while i < l:  
+    x = random.randint(1,10*l)
+    if x not in A:
+        A.append(x)
+        i += 1
+print "------------------------"
+print "Lista Original"
+print A
+ 
+perms = True
+inicio = datetime.now()
+while perms:
+    perms = False
+        for i in range(len(A)-1):
+            if A[i] > A[i + 1]:
+               A[i], A[i + 1] = A[i + 1], A[i]
+           perms = True
+ 
+fim = datetime.now()
+duracao = fim - inicio
+print "-------------"
+print "Ordenada"
+print A
+print "-------------"
+print "Tempo (ms) : ","%2.8f"%float(duracao.seconds * 1000 + \
+    float(duracao.microseconds)/1000)
+
+
+
+##########################################################################
+
+ 
+########################  inserção      #################################
+
+from datetime import datetime
+import random
+random.seed()
+#
+#
+os.system("clear")
+# entrada da dados
+l = input("Digite o tamanho da lista ")
+A = []
+# gerando a lista a ser utilizada
+i = 0
+while i < l:
+    x  = random.randint(1,10*l)
+    if x not in A: 
+        A.append(x)
+        i += 1
+ 
+print "-----------------"
+print "Lista Original   "
+print A
+inicio = datetime.now()
+for j in range(1, len(A)):
+    chave  = A[j]
+        i = j - 1
+        while A[i] > chave and i >= 0:
+            A[i+1] = A[i]
+            i -= 1
+        A[i+1] = chave
+fim = datetime.now()
+duracao = fim - inicio
+print "----------------"
+print "Ordenada "
+print A
+print "----------------"
+print "     (ms) : ","%2.8f"%float(duracao.seconds * 1000 + \
+    float(duracao.microseconds)/1000)
+
+
+
+
+#####################################################################################
+
+
+
+###################### seleção #########################################
+
+from datetime import datetime
+os.system("clear")
+#A = input("Digite a lista a ser ordenada ")
+A = []
+l = 100000
+for i in range(l): A.append(l - i) 
+print "Lista natural ",A
+inicio = datetime.now()
+for i in range(len(A)):
+    pos_menor = i
+    for j in range(i+1,len(A)):
+        if A[pos_menor] > A[j]:
+            pos_menor = j
+    A[i], A[pos_menor] = A[pos_menor],  A[i]
+fim = datetime.now()
+duracao = fim - inicio
+print "Lista Ordenada : ", A
+print "Feito em (ms): ","%2.8f" %float(duracao.seconds*1000 + float(duracao.microseconds)/1000)
+
+########################################################################################
+
+
+######################################## SHELL  sort #################################
+ def shellSort(alist):
+    sublistcount = len(alist)//2
+    while sublistcount > 0:
+
+      for startposition in range(sublistcount):
+        gapInsertionSort(alist,startposition,sublistcount)
+
+      print("After increments of size",sublistcount,
+                                   "The list is",alist)
+
+      sublistcount = sublistcount // 2
+
+def gapInsertionSort(alist,start,gap):
+    for i in range(start+gap,len(alist),gap):
+
+        currentvalue = alist[i]
+        position = i
+
+        while position>=gap and alist[position-gap]>currentvalue:
+            alist[position]=alist[position-gap]
+            position = position-gap
+
+        alist[position]=currentvalue
+
+alist = [54,26,93,17,77,31,44,55,20]
+shellSort(alist)
+print(alist)
+
+################################################################################
+
+
+
+############################ torres de hanoi####################################
+
+movimentos = 0
+ 
+def mover(origem,destino):
+    global movimentos 
+    movimentos += 1
+    obj = origem.pop()
+    destino.append(obj)
+    print "-----------"
+    print "1:",h1
+    print "2:",h2
+    print "3:",h3
+ 
+def hanoi(n,origem,destino,tmp):
+    if n == 1:
+        mover(origem,destino)
+    else:
+        hanoi(n-1,origem,tmp,destino)
+        mover(origem,destino)
+        hanoi(n-1,tmp,destino,origem)
+# inicio
+x = int(raw_input("digite o número de anéis "))
+h1 = []
+h2 = []
+h3 = []
+for i in range(0,x): h1.append(x-i)
+print "1:",h1
+print "2:",h2
+print "3:",h3
+hanoi(x,h1,h3,h2)
+print "Número de movimentos foi", movimentos 
+# fim do programa
+
+
+####################################################################################################
+
+
+
+########### coroa circular poo ######################
+
+import math
+class Circulo:
+    def __init__(this):
+        this.raio = input("Qual p Rário do Circulo? ")
+    def area(this):
+        return 2*this.raio*math.pi
+ 
+ 
+class CoroaCircular(Circulo):
+    def __init__(this):
+        Circulo.__init__(this)
+        this.raioMenor = input("Qual o raio do circulo menor? ")
+    def areaCoroa(this):
+        return this.area() - (2*math.pi*this.raioMenor)
+ 
+coroa = CoroaCircular()
+
+##############################################################
+
+
+
+ PERMUTAÇOES
+
+#####################################################
+RECURSIVO
+
+# esta funcao retorna uma lista de listas que são permutações da lista original
+def permutacoes(lista):
+    if len(lista) == 1: # Caso base
+        return [lista]
+    primeiro = lista[0]
+    resto = lista[1:]
+    resultado = []
+    for perm in permutacoes(resto):
+        for i in range(len(perm)+1):
+            resultado = resultado + [perm[:i]+[primeiro]+perm[i:]]
+    return resultado
+# fim da função
+x = input("Digite a lista ")
+print permutacoes(x)
+# fim do programa
+
+########################################################
+
+
+
+#######################################################
+INTERATIVO
+
+def permutacoes(lista):
+    if len(lista) == 1: # Caso base
+        return [lista]
+    primeiro = lista[0]
+    resto = lista[1:]
+    resultado = []
+    for perm in permutacoes(resto):
+        for i in range(len(perm)+1):
+            resultado = resultado + [perm[:i]+[primeiro]+perm[i:]]
+    return resultado
+# fim da função
+x = input("Digite a lista ")
+print permutacoes(x)
+# fim do programa
+#############################################	
+
+################################################################################################
+BUSCA BINARIA
+
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+ 
+"""
+Busca Binária em Python
+by Vinicius Viana
+"""
+ 
+def busca_binaria(lista, busca):
+    inicio, fim = 0, len(lista)-1
+    while inicio <= fim:
+        meio = (inicio + fim)/2
+        if busca == lista[meio]:
+            return True
+        else:
+            if lista[meio] < busca:
+                inicio = meio + 1
+            else:
+                fim = meio - 1
+    return False
+     
+while True:
+    valor_ini = raw_input("Qual o valor inicial do vetor:")
+    valor_fin = raw_input("Qual o valor final do vetor:")
+    numeros = range(int(valor_ini), int(valor_fin)+1)  #aqui definimos nossa lista de valores ordenados
+    valor_busca = raw_input("Qual o valor que você quer buscar no vetor:")
+    if busca_binaria(numeros, int(valor_busca)):
+        print "O valor", valor_busca ," foi encontrado."
+    else:
+        print "O valor", valor_busca ," não foi encontrado."
+###################################################################################################

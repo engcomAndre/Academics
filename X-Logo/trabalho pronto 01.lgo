@@ -1,0 +1,278 @@
+
+#Modularização do procedimento test
+#Desenha a mira no local atual da tartaruga 0
+aprenda mod01
+  mudecl 0
+  mudeel 10  
+  pt 50 
+  pf 100  
+  pt 50 
+  pe 90 
+  pt 50 
+  pf 100 
+  pt 50 
+  pd 90 
+  mudeel 5 
+  círculo 50  
+
+fim
+#Modularização do procedimento test
+#Apaga pintando a figura com a cor do fundo
+aprenda mod02
+  mudecl cordofundo  
+  mudeel 12  
+  pt 50 
+  pf 100 
+  pt 50 
+  pe 90 
+  pt 50 
+  pf 100 
+  pt 50
+  pd 90 
+  mudeel 7 
+  círculo 50
+fim
+
+
+#Procedimento que usa os modulos de test
+#Desenha e Apagua a Mira
+aprenda mod_01_02
+  animado
+    mod01
+  veranimado
+    mod02
+
+fim
+
+
+#Desloca Mira na Tela
+aprenda mira
+    un
+    escondetat
+    mudepos posmouse
+    ul
+      mod_01_02
+
+fim
+
+#Procedimento de movimento aleatório ( códifo repetitivo para aproveitamento de código)
+aprenda fuga_tat
+
+    un
+    mudedireção sorteie 30
+    pf sorteie 1 
+
+fim
+
+#Procedimento de movimento aleatório ( códifo repetitivo para aproveitamento de código)
+aprenda fuga_tat1
+    un
+    mudedireção sorteie 180+50
+    pf sorteie 5+3 
+
+fim
+
+aprenda mate_tat :tat
+#Procedimento Retira a Tartaruga da Tela e Imprime Uma Imagem na sua posição
+#:tat é a variável que define qual tartaruga sera afetada
+
+      escondetat
+      un pe 90 pf 25 pd 90 pt 35 
+      carimg "splash01.png
+      toquemp3 "Shotgun-ShootReload.mp3
+      pf 35 pe 90 pt 25 pd 90
+
+fim
+
+
+#Procedimento que ativa e sorteia as posições iniciais das tartarugas necessárias para 
+#o aplicativo de acordo com o eixo cartesiano além disso distribui mais uniformemente
+#as caracteristicas
+#tat 0 e tat 1 estao reservadas para procedimentos específicos
+aprenda mud_rp
+
+                        atat 2    un muderoupa 1    escondetat mudexy sorteie 300 sorteie 300
+                        atat 3    un muderoupa 2    escondetat mudexy sorteie 300 sorteie 300
+                        atat 4    un muderoupa 3    escondetat mudexy sorteie 300 sorteie 300
+                        atat 5    un muderoupa 4    escondetat mudexy sorteie 300 sorteie 300
+                        atat 6    un muderoupa 5    escondetat mudexy sorteie 300 sorteie 300
+                        atat 7    un                              escondetat mudexy sorteie 300 sorteie 300          
+                        atat 8    un muderoupa 6    escondetat mudexy sorteie 300 sorteie 300
+                        atat 9    un muderoupa 7    escondetat mudexy sorteie 300 sorteie 300
+                        atat 10  un muderoupa 1    escondetat mudexy sorteie 300 sorteie 300
+                        atat 11  un muderoupa 2    escondetat mudexy sorteie 300 sorteie 300
+                        atat 12  un muderoupa 3    escondetat mudexy sorteie 300 sorteie 300
+                        atat 13  un muderoupa 1    escondetat mudexy sorteie 300 sorteie 300
+                        atat 14  un muderoupa 2    escondetat mudexy sorteie 300 sorteie 300
+                        atat 15  un muderoupa 3    escondetat mudexy sorteie 300 sorteie 300
+                        atat 16  un muderoupa 4    escondetat mudexy sorteie 300 sorteie 300
+\                       atat 17  un muderoupa 5    escondetat mudexy sorteie 300 sorteie 300
+                        atat 18  un                              escondetat mudexy sorteie 300 sorteie 300          
+                        atat 19  un muderoupa 6    escondetat mudexy sorteie 300 sorteie 300
+                        atat 20  un muderoupa 7    escondetat mudexy sorteie 300 sorteie 300
+                        atat 21  un muderoupa 1    escondetat mudexy sorteie 300 sorteie 300
+                        atat 22  un muderoupa 2    escondetat mudexy sorteie 300 sorteie 300
+                        atat 23  un muderoupa 3    escondetat mudexy sorteie 300 sorteie 300
+
+
+fim
+
+
+#Procedimento que possibilita a comparação de posição menos ou mais precisa 
+#de acordo com o valor atribuido a variável :prec ,quanto mais alto o seu valor menor
+#será a precisão do objeto movimentado e do ponteiro do mouse
+#:posx = posição da tat no eixo x
+#:posy = posição da tat no eixo y
+#posxm = posição do mouse no eixo x
+#posxy = posição do mouse no eixo y
+aprenda comp_pos
+
+   atrlocal "prec 100
+    pf 25 pd 8
+    atr "posx     inteiro(elem 1 pos)/:prec 
+    atr "posy     inteiro(elem 2 pos)/:prec
+    atr "posxm  inteiro(elem 1 posmouse)/:prec
+    atr "posym  inteiro(elem 2 posmouse)/:prec
+           
+fim
+
+
+#Procedimento de apresentação da contagem em um ponto 
+#específico da tela conta a quantidade de disparos 
+aprenda contagemm :muni
+
+    un
+    escondetat 
+    mudepos [- 130 -191]
+    mudedireção 0      
+    pe 90 pf 25 pd 90 pt 35      
+    carimg "shotgun.png   
+    pd 45 pf 15 pe 45 pf 15 
+    mudecl branco
+    rotule :muni 
+
+fim
+
+#Procedimento de apresentação da contagem em um ponto 
+#específico da tela conta a quantidade de tartarugas desativadas 
+aprenda contagem :mun
+     un
+     escondetat
+     mudepos  [ -200 -200] 
+     mudedireção 0
+     un pe 90 pf 25 pd 90 pt 25 
+     carimg "splash02.png
+     pf 25 pe 90 pt 20 pd 90
+     mudefonte 25
+     mudecl branco
+     ul
+     rotule :mun
+
+fim
+
+#Procedimento que cria um pequeno jogo em nível iniciante
+aprenda main_0
+    comlimite
+    atrlocal "tat  9
+    atrlocal "mun 20
+    atrlocal "muni 0
+    mud_rp
+    contador 5                      
+     enquanto    [não :tat = 0] [atat  0 mira
+                                                 contagemm :muni  
+                                                 contagem :tat
+                                                 atat :tat    
+                                                 mostretat fuga_tat comp_pos espere 6
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                                   
+                                                       se :tat = 1 [ contagem 0 
+                                                                          mensagem 
+                                                                          [Você Agora é um Serial Killer de Tartarugas Nível 1] 
+                                                                           espere 300
+                                                                          Leia [DIGITE QUALQUER TECLA + <<ENTER>> PARA CONTINUAR AO PRÓXIMO NÍVEL OU "X" PARA SAIR] "aval
+                                                                          SE (ou :aval =  120 :aval =  88)[ADEUS] [main_2]
+                                                                          ]      
+                                                     se :muni = 30 [mensagem [TAT diz:" Acertou......................no VENTO...kkkkkk ] espere 90 atribua "muni :muni +1]                           
+                                                     se étecla? 
+                                                     [se leiacar  =32 
+                                                            [atribua "muni :muni+1
+                                                             toquemp3 "Shotgun-ShootReload.mp3]     
+                                                      se fimcontador? [mudecf cordofundo
+                                                                                      contagemm :muni  
+                                                                                      contagem :tat
+                                                       
+                                                                                      ]                                                 
+                                                      ]
+                                                                                
+                                                      ]                               
+
+fim
+
+
+
+aprenda main_2
+ comlimite
+   atrlocal "tat  9
+   atrlocal "mun 20
+   atrlocal "muni 0
+   mud_rp
+   contador 5                     
+enquanto    [não :tat = 0] [   atat  0 mira
+                                                 contagemm :muni  
+                                                 contagem :tat
+                                                 atat :tat    
+                                                 mostretat fuga_tat comp_pos espere 3
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+                                                              atat :tat+1    
+                                                 mostretat fuga_tat1 comp_pos espere 3
+                                                 se (e :posx = :posxm  :posy = :posym étecla? ) 
+                                                       [se leiacar = 32  
+                                                                                    [mate_tat :tat
+                                                                                     atribua "muni :muni+1
+                                                                                     atribua "tat :tat -1
+                                                                                      ]
+                                                       ]                                                                                                
+                                                       se :tat = 1 [ contagem 0 
+                                                                          mensagem 
+                                                                          [Você Agora é um Serial Killer de Tartarugas Nível 2] 
+                                                                           espere 300
+                                                                          Leia [DIGITE QUALQUER TECLA PARA CONTINUAR DESEJA IR AO PRÓXIMO NÍVEL OU "X" PARA SAIR] "aval
+                                                                          SE (ou :aval =  120 :aval =  88 )[adeus] [main_0]
+                                                                          ]
+                                                          
+                                                     se étecla? 
+                                                     [se leiacar  =32 
+                                                            [atribua "muni :muni+1
+                                                             toquemp3 "Shotgun-ShootReload.mp3]     
+                                                    se fimcontador? [mudecf sorteie (5) +1 
+                                                                                     contagemm :muni  
+                                                                                     contagem :tat  
+                                                                                    ]                                                 
+                                                      ]                          
+                                                     se :muni = 20 [mensagem [TAT diz:" kkkkkk ele é cego....] espere 90 atr "muni :muni+1]                                                       
+                                                     se :muni = 30 [mensagem [TAT diz:" Vai que dá certo....]espere 90 atr "muni :muni +1]                                                   
+]                                                    se :muni = 30 [mensagem [TAT diz:" Cuidado pra não acerta o pé....]espere 90 atr "muni  :muni +1] 
+
+fim
+
+
+aprenda mateatat
+mudemaxtat 50
+mensagem [Objetivo:Caçar e Atirar nas Tartarugas até que o contador zere.]
+mensagem  [Mova a Mira Usando o Mouse Pressione TECLA ESPAÇO para atirar ]
+mensagem [Programa não recomendado para membros do IBAMA!!!  ou Projeto TAMAR!!! Divirtasse]
+main_0
+
+
+fim

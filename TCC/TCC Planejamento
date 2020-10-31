@@ -1,0 +1,70 @@
+
+Projeto TCC
+
+Estruturação do TCC
+
+MODELO ESCOLHIDO : ARTIGO CIENTÍFICO
+  
+ÁREA : COMPUTAÇÃO - VISÃO COMPUTACIONAL
+
+Etapas do artigo científico
+
+Passos 
+
+1 - Definir a Estrutura básica
+		1 - Tema delimitado;
+			Como escolher um algoritmo de reconhecimento facial;
+		2 - Problema de pesquisa;
+			Comparar de forma eficaz algoritmo de classificação facial;
+		3 - Questão a respeito desse tema;
+			Como avaliar os algoritmos de classificação facial de forma mais criteriosa			
+		4 - Objetivo geral;
+			Comparar os algoritmos EngenFaces,Fisherfaces e LBPH na tarefa de reconhecimento facial para a tomada de decisão de qual algoritmo utilizar.			
+		5 - Objetivo específicos;			
+			01 - Sistemas de Visão Computacional
+			02 - Etapas de um Sistemas de Visão Computacional
+			03 - Reconhecimento Biométrico,aspectos importantes e relevantes para as aplicações;
+			03 - Algoritmo EigenFaces;
+			05 - Algoritmo FisherFaces;
+			06 - Algoritmo LBPH;
+			07 - Avaliando os algoritmos quanto ao tempo de execução;
+			08 - Avaliando os algoritmos quanto ao espaço ocupado em memória; 
+			09 - Avaliando os algoritmos quanto ao espaço ocupado em memória; 
+			10 - Avaliando os algoritmos quanto ao espaço ocupado em disco; 
+			11 - Avaliando os algoritmos quanto a precisão ,taxa de erro e acerto;	
+			12 - Proposta de otimização;
+		
+2 - Escrever a introdução;
+		Introdução
+				Contextualização;
+				Justificativa;
+				Problema de pesquisa;
+				Objetivo geral; 
+				Objetivos específicos;
+				Estrutura de capitulos - Tópicos que serão abordados em cada capitulo
+				
+3 -Roterizar os capitulos(3 a 4 tópicos sobre capítulo)
+		1 - Definição ou conceitos;
+		2 - Evolução dos estudos sobre tema proposto;
+		3 - Comparação entre produções acadêmicas em busca de conteudos complementares,divegentes etc;
+		4 - Fechamento do capítulo dentro do contexto do artigo;
+
+4 - Ao ler conteudos de referencia,extrair o conteúdo dos referenciais teóricos, inclusive colando as partes relevantes ao capitulo|tópico para posterior consulta na estretura do artigo;
+5 - Escrever o bendito;
+
+
+Artigo Cientifico	
+	Introdução
+	Desenvolvimento (Conteúdo)
+	Conclusão
+	
+	
+	
+Estrutura dos paragrafos (TSAC)
+	Tópico frasal: Uma afirmação sobre o conteúdo
+	Sustentação : Embasamento referencial para fortalecer a ideia do tópico frasal
+	Argumentação : Relevancia e importancia;
+	Conclusão : Fechamento sobre o que aberto no Tópico Frasal. 
+	
+	
+

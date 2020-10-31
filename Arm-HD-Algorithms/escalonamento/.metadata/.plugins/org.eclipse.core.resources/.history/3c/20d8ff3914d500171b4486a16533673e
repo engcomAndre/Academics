@@ -1,0 +1,45 @@
+package model;
+
+import java.util.LinkedList;
+
+public class Configure {
+	private int qntdCilinder = 100;
+	private int discArmInitialCilinder = 50;
+	private float seekTime = 1;
+	static LinkedList <Integer> Process;
+	
+	
+	//gets
+	public int getQntdCiliders() {
+		return this.qntdCilinder;
+	}
+	
+	public static float getSeekTime() {
+		return seekTime;
+	}
+	
+	public static int getDiscArmInitialCilinder() {
+		return discArmInitialCilinder;
+	}
+	
+	public static LinkedList<Integer> getProcess() {
+		return Process;
+	}
+	
+	//Sets
+	public void setQntdCiliders(int qntdCiliders) {
+		this.qntdCilinder = qntdCiliders;
+	}
+	
+	public void setDiscArmInitialCilinder(int discArmInitialCilinder) {
+		Configure.discArmInitialCilinder = discArmInitialCilinder;
+	}
+	
+	public void setSeekTime(float seekTime) {
+		Configure.seekTime = seekTime;
+	}
+	
+	public void setProcess() {
+		//Process = DataIN.getData();
+	}		
+}

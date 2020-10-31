@@ -1,0 +1,84 @@
+# Procedimento que mostra os divisores
+# de um número (:num)
+aprenda mostre_divisores :num
+    repita quociente :num 2
+    [
+        se (resto :num cv) = 0
+        [
+            escreva cv
+            escreva ",
+            escreva caracter 32
+        ]
+    ]
+    mostre :num
+fim
+
+# Procedimento que retorna o número
+# de divisores de um número (:num)
+aprenda conte_divisores :num
+    atrlocal "res 1
+    repita quociente :num 2
+    [
+        se (resto :num cv) = 0
+        [
+            atribua "res :res + 1
+        ]
+    ]
+    saída :res
+fim
+
+# Procedimento que retorna verdadeiro
+# se o número (:num) for primo e falso
+# caso contrário
+aprenda é_primo? :num
+    saída (conte_divisores :num) = 2
+fim
+
+# Procedimento que mostra os números
+# primos no intervalo fechado [:ini :fim]
+aprenda mostre_primos :ini :fim
+    repita :fim-:ini+1
+    [
+        se éprimo? :ini
+        [
+            escreva :ini
+            escreva caracter 32
+        ]
+        atribua "ini :ini + 1
+    ]
+fim
+
+# Procedimento que retorna verdadeiro
+# se o número (:num) for primo, e falso
+# caso contrário
+aprenda éprimo? :num
+    se :num = 1 [saída falso]
+    atrlocal "x 2
+   # para (lista "x 2 quociente :num 2 1)
+    repita (quociente :num 2) - 1
+    [
+        se (resto :num :x) = 0
+        [
+            saída falso
+        ]
+        atribua "x :x+1
+    ]
+    saída verd
+fim
+
+aprenda raízes :a :b :c
+    atrlocal "d :b*:b-4*:a*:c
+    se :d<0 [mostre [Não existem raízes reais]]
+    se :d=0 [ (mostre [Duas raízes reais e iguais a] (-:b)/(2*:a))]
+    se :d>0
+    [
+        atrlocal "r1 (arredonde 1000*((-:b)+raizq :d)/(2*:a))/1000
+        atrlocal "r2 (arredonde 1000*((-:b)-raizq :d)/(2*:a))/1000
+        (mostre :r1 :r2)
+    ]
+fim
+
+aprenda formate :num :nc
+    atrlocal "pot potência 10 :nc
+    saída (arredonde :pot*:num)/:pot
+fim

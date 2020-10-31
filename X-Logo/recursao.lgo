@@ -1,0 +1,78 @@
+aprenda lis_fatorial :termo
+   mudeprecisão 200 
+   atrlocal "res 1
+   repita :termo -1[
+                                escreva :termo
+                                escreva car 32
+                                escreva "x
+                                escreva car 32
+                                atribua "res :termo * :res
+                                atribua "termo :termo -1
+
+                               ]
+  escreva :termo
+  escreva car 32
+  escreva "=  
+  escreva car 32
+  escreva :res
+
+fim
+
+aprenda enqfatorial :termo
+  mudeprecisão 200
+  atrlocal "res 1
+  enquanto [:termo > 0 ] [
+                                          escreva :termo
+                                           escreva car 32
+                                          escreva "x
+                                          escreva  car 32
+                                          atribua "res :res * :termo
+                                          atribua "termo :termo -1
+                                          ]      
+  escreva :termo
+  escreva car 32
+  escreva "=
+  escreva car 32
+  escreva :res
+
+fim
+
+aprenda pa_fatorial :termo
+  para [:termo 1 :termo 1] [
+                                              escreva :termo
+                                              escreva car 32
+                                              escreva "x
+                                              escreva  car 32
+                                              atribua "res :res * :termo
+                                              atribua "termo :termo -1
+                                              ]      
+ escreva :termo
+  escreva car 32
+  escreva "=
+  escreva car 32
+  escreva :res
+
+fim
+
+
+aprenda fat_r :termo :res
+  se :termo = 1 [ escreva :termo
+                             escreva car 32
+                             escreva "=
+                             escreva car 32
+                             escreva :res
+                           ] 
+                           [escreva :termo
+                            escreva car 32
+                            escreva "x
+                            escreva  car 32
+                            atribua "res :res * :termo  
+                            atribua "termo :termo -1
+                            fat :termo  
+                             ]
+fim
+
+aprenda fat :termo
+  atr "res 1
+  fat_r :termo :res
+fim

@@ -1,0 +1,107 @@
+
+#Modularização do procedimento test
+#Desenha a mira no local atual da tartaruga 0
+aprenda mod01
+mudecl 0
+mudeel 10  
+pt 50 
+pf 100 
+pt 50 
+pe 90 
+pt 50 
+pf 100 
+pt 50 
+pd 90 
+mudeel 5 
+círculo 50  
+
+fim
+#Modularização do procedimento test
+#Apaga pintando a figura com a cor do fundo
+aprenda mod02
+mudecl cordofundo  
+mudeel 12  
+pt 50 
+pf 100 
+pt 50 
+pe 90 
+pt 50 
+pf 100 
+pt 50
+pd 90 
+mudeel 7 
+círculo 50
+fim
+
+
+#Procedimento que usa os modulos de test
+#Desenha e Apagua a Mira
+aprenda mod_01_02
+animado
+mod01
+veranimado
+mod02
+
+fim
+
+
+#Desloca Mira na Tela
+aprenda mira
+un
+escondetat
+mudepos posmouse
+ul
+mod_01_02
+
+fim
+
+aprenda fuga_tat
+un
+mudedireção sorteie 45
+pf sorteie 60+15 
+
+fim
+
+
+
+aprenda mate_tat
+enquanto [não leiamouse = 1][carimg "splash01.png
+                                                                           toquemp3 "Shotgun-ShootReload.mp3
+                                                                           mo  1
+                                  ] [pare] ]
+fim
+
+aprenda fuga_multitat
+
+atat 1 fuga_tat
+
+
+
+fim
+
+
+aprenda main
+    comlimite
+    parasempre [atat 0 mira
+                        atat 1    mostretat fuga_tat                                 mate_tat
+                        atat 2    muderoupa 1    mostretat fuga_tat1  mate_tat
+                        atat 3    muderoupa 2    mostretat fuga_tat    mate_tat
+                        atat 4    muderoupa 3    mostretat fuga_tat1  mate_tat
+                        atat 5    muderoupa 4    mostretat fuga_tat    mate_tat
+                        atat 6    muderoupa 5    mostretat fuga_tat1  mate_tat
+                        atat 7    mostretat fuga_tat                                 mate_tat
+                        atat 8    muderoupa 6    mostretat fuga_tat1  mate_tat
+                        atat 9    muderoupa 7    mostretat fuga_tat    mate_tat
+                        atat 10  muderoupa 1    mostretat fuga_tat1  mate_tat
+                        atat 11  muderoupa 2    mostretat fuga_tat    mate_tat
+                        atat 12  muderoupa 3    mostretat fuga_tat1  mate_tat
+
+
+]
+fim
+
+aprenda fuga_tat1
+un
+mudedireção sorteie 180
+pf sorteie 60+15 
+fim

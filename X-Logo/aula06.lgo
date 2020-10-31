@@ -1,0 +1,37 @@
+aprenda esp_quad :ns :ti :in
+   repita :ns
+    [
+        parafrente :ti
+        paradireita 90
+        atribua "ti :ti+:in
+    ]
+fim
+
+aprenda espiral :ns :ti :in :an
+   repita :ns
+    [
+        parafrente :ti
+        paradireita :an
+        atribua "ti :ti+:in
+    ]
+fim
+
+aprenda inspiral :ns :ti :in :an
+   repita :ns
+    [
+        parafrente :ti
+        paradireita :an
+        atribua "an :an + :in
+    ]
+fim
+
+aprenda prog_arit :nt :ti :ra
+    repita :nt -1
+    [
+        escreva :ti
+        escreva ",
+        escreva caracter 32
+        atribua "ti :ti + :ra
+    ]
+    mostre :ti
+fim

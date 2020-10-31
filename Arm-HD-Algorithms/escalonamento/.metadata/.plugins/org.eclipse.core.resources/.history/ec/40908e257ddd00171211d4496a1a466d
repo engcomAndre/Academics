@@ -1,0 +1,72 @@
+package controller;
+
+import java.util.LinkedList;
+
+public class SCAN {
+	//data SCAN algorithm
+	private LinkedList<Integer>callResquisitionsOrder ;		
+	private LinkedList<Integer>distances ;
+
+	public SCAN(int initialPosition,LinkedList<Integer>Process){
+		this.callResquisitionsOrder = new LinkedList<>();
+		this.distances = new LinkedList<>();
+		this.schedulerSCAN(initialPosition, Process);
+	}
+
+	public LinkedList<Integer> getCallRequisitionOrder(){		
+		return callResquisitionsOrder;
+	}
+
+	public LinkedList<Integer> getDistances(){
+		return distances;
+	}
+
+	private void schedulerSCAN(int atualPosition,LinkedList<Integer>Process) {
+		int distance,sentido;
+		Process.add(atualPosition);
+		Process.sort(null);
+		sentido = -1;
+		if(Process.get(0) > atualPosition) {
+			sentido = 1;			
+		}		
+		while(!Process.isEmpty()){
+			if(sentido > 0) {
+				for(Integer j : Process.subList(Process.indexOf(atualPosition), Process.size())) {
+					callResquisitionsOrder.addLast(atualPosition);
+					distance = Math.abs(atualPosition - j);
+					distances.addLast(distance);
+					atualPosition = Process.remove(Process.indexOf(j));
+					
+				}			
+				sentido = -1;
+			}
+			else {
+				for(Integer l : Process.subList(0, Process.indexOf(atualPosition))) {
+					callResquisitionsOrder.addLast(atualPosition);
+					distance = Math.abs(atualPosition - l);
+					distances.addLast(distance);
+					atualPosition = Process.remove(Process.indexOf(l));
+					
+				}			
+				sentido = 1;				
+			}			
+		}
+	}
+
+
+	public void printData() {		
+		System.out.println("Processos Chamados    = "+this.callResquisitionsOrder);
+		System.out.println("Distancias            = "+this.distances);
+
+	}
+
+	@Override
+	public String toString() {
+		return "SCAN "
+				+ "\n callResquisitionsOrder = "+ callResquisitionsOrder 
+				+ "\n distances = " + distances;
+	}
+
+
+
+}

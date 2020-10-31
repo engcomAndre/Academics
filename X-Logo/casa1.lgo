@@ -1,0 +1,35 @@
+aprenda casa :tl
+  #quadrado  
+  mudecl preto
+  repita 4 [
+                    pf :tl 
+                    pd 90
+                   ] 
+   pd 45 
+   un
+   pf (:tl*raizq 2)/2
+   mudecl 1+sorteie 5
+   pinte
+   pt (:tl*raizq 2)/2
+   pe 45
+   ul
+   mudecl preto  
+   #deslocamento para retorno de posiçãoe pintura
+   #deslocamento 
+   pf :tl
+   pd 30 
+   repita 3 [
+                   pf :tl
+                   pd 120
+                  ]
+  pd 15
+  un
+  pf :tl/3
+  mudecl 1+sorteie 5
+  pinte
+  pt :tl/3
+  pe 45
+  pt :tl
+  
+              
+fim

@@ -1,0 +1,16 @@
+def bubblesort(l):
+    for passesLeft in range(len(l)-1, 0, -1):
+        for index in range(passesLeft):
+            if l[index] < l[index + 1]:
+               l[index], l[index + 1] = l[index + 1], l[index]
+    return l
+
+def bubbleSort(L,n):
+    flag = True
+    while flag:
+        flag = False
+        for i in range(n-1):
+            if L[i] > L[i+1]:
+                L[i],L[i+1] = L[i+1],L[i]
+                flag = True
+ 

@@ -1,0 +1,89 @@
+package controller;
+
+
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+import javax.swing.plaf.synth.SynthSpinnerUI;
+
+public class SSF {
+	//data FCFS algorithm
+		private LinkedList<Integer>callResquisitionsOrder ;		
+		private LinkedList<Integer>distances ;
+
+		public SSF(int initialPosition,LinkedList<Integer>Process){
+			this.callResquisitionsOrder = new LinkedList<>();
+			this.distances = new LinkedList<>();
+			this.schedulerSSF(initialPosition, Process);
+		}
+		
+		public LinkedList<Integer> getCallRequisitionOrder(){		
+			return callResquisitionsOrder;
+		}
+
+		public LinkedList<Integer> getDistances(){
+			return distances;
+		}
+
+		private void schedulerSSF(int atualPosition,LinkedList<Integer>Process) {			
+			
+			int prox,proxProcess,antProcess;
+			Scanner scan = new Scanner(System.in);
+			
+			while(!Process.isEmpty()){
+				try {
+					proxProcess = Process.get(Process.indexOf(atualPosition)+1);					
+				} catch (Exception e) {					
+					proxProcess = 0;
+				}				
+				
+				try {
+					antProcess = Process.get(Process.indexOf(atualPosition)-1);					
+				} catch (Exception e) {					
+					antProcess = 0;
+				}
+				
+								
+				if(Math.abs(atualPosition - proxProcess) <= Math.abs(atualPosition - antProcess)) {
+					prox = proxProcess;										
+				}
+				else {
+					prox = antProcess;					
+				}	
+				
+				System.out.println(Process);
+				System.out.println(callResquisitionsOrder);
+				
+				System.out.println(prox);
+				scan.nextLine();
+				
+				
+				
+								
+				distances.addLast(Math.abs(atualPosition - prox));
+				callResquisitionsOrder.addLast(Process.remove(Process.indexOf(prox)));
+				
+				System.out.println(atualPosition);
+				
+				
+			}
+		}	
+		
+
+		public void printData() {		
+			System.out.println("Processos Chamados    = "+this.callResquisitionsOrder);
+			System.out.println("Distancias            = "+this.distances);
+
+		}
+
+		@Override
+		public String toString() {
+			return "SSF "
+					+ "\n callResquisitionsOrder = "+ callResquisitionsOrder 
+					+ "\n distances = " + distances;
+		}
+		
+	}			
+
+

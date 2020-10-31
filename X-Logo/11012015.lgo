@@ -1,0 +1,91 @@
+aprenda oplis
+pf 12 pe 2
+atr "posx inteiro elem 1 pos
+atr "posy inteiro elem 2 pos
+mudexy  :posx  :posy
+mo lista [:posx :posy]
+
+oplis
+
+fim
+
+aprenda opmo
+   
+    pf 25 pd 8
+    atr "posx     inteiro(elem 1 pos)/:prec 
+    atr "posy     inteiro(elem 2 pos)/:prec
+    atr "posxm  inteiro(elem 1 posmouse)/:prec
+    atr "posym  inteiro(elem 2 posmouse)/:prec
+           se (e :posx = :posxm   :posy = :posym) [enquanto [não leiamouse = 1 ] [opmo]rotule "dead]      
+
+#escreva :posx escreva car 32
+#escreva :posy escreva car 32
+#escreva :posxm escreva car 32
+#escreva :posym escreva car 32 mo car 32
+#mo (e :posx = :posxm   :posy = :posym )
+opmo
+fim
+
+
+#Modularização do procedimento test
+#Desenha a mira no local atual da tartaruga 0
+aprenda mod01
+mudecl 0
+mudeel 10  
+pt 50 
+pf 100 
+pt 50 
+pe 90 
+pt 50 
+pf 100 
+pt 50 
+pd 90 
+mudeel 5 
+círculo 50  
+
+fim
+#Modularização do procedimento test
+#Apaga pintando a figura com a cor do fundo
+aprenda mod02
+mudecl cordofundo  
+mudeel 12  
+pt 50 
+pf 100 
+pt 50 
+pe 90 
+pt 50 
+pf 100 
+pt 50
+pd 90 
+mudeel 7 
+círculo 50
+fim
+
+
+#Procedimento que usa os modulos de test
+#Desenha e Apagua a Mira
+aprenda mod_01_02
+animado
+mod01
+veranimado
+mod02
+
+fim
+
+
+#Desloca Mira na Tela
+aprenda mira
+un
+escondetat
+mudepos posmouse
+ul
+mod_01_02
+
+fim
+
+aprenda tesle
+
+#se não leiamouse = [] [escreva "verd ]
+senão leiamouse =  1 [escreva "falso]
+senão
+fim

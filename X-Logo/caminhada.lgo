@@ -1,0 +1,33 @@
+aprenda caminhada
+    comlimite
+    atat 0
+    muderoupa 1
+    mudecl azul
+    atat 1
+    mostretat
+    muderoupa 2
+    mudecl verde
+    atat 2
+    mostretat
+    muderoupa 3
+    mudecl vermelho
+    animado
+    parasempre
+    [
+        atat 0
+        paradireita 30 - sorteie 61
+        parafrente 1 + sorteie 10
+        atrlocal "pos pos
+        atat 1
+        mudedç direçãopara :pos
+        paradireita 30 - sorteie 61
+        parafrente 1 + sorteie 7
+        atrlocal "pos1 pos
+        atat 2
+        mudedç direçãopara :pos1
+        paradireita 30 - sorteie 61
+        parafrente 1 + sorteie 4
+        veranimado
+    ]
+    pareanimado
+fim

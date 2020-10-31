@@ -1,0 +1,86 @@
+aprenda quadrado :tl
+    repita 4 [
+        parafrente :tl
+        paradireita 90]
+fim
+
+aprenda triângulo :tl
+    repita 3 [
+          parafrente :tl
+          paradireita 120]
+fim
+
+aprenda casa :ac
+    quadrado :ac
+    parafrente :ac
+    paradireita 30
+    triângulo :ac
+    paraesquerda 30
+    paratrás :ac
+fim
+
+aprenda rua :nc :ac
+    repita :nc [
+        casa :ac
+        paradireita 90
+        parafrente :ac
+        paraesquerda 90
+    ]
+    paraesquerda 90
+    parafrente :nc * :ac
+    paradireita 90
+fim
+
+aprenda cidade :nr :nc :ac
+    repita :nr [
+        uselápis
+        rua :nc :ac
+        usenada
+        parafrente 3*:ac
+    ]
+    paratrás 3*:ac*:nr
+    uselápis
+fim
+
+aprenda pentagrama :tl
+    repita 5 [
+        parafrente :tl
+        paradireita 144
+    ]
+fim
+
+aprenda heptagrama :tl
+    repita 7 [
+        parafrente :tl
+        paradireita 720/7
+    ]
+fim
+
+aprenda hexagrama :tl
+    repita 6 [
+        parafrente :tl
+        paradireita 720/6
+    ]
+fim
+
+aprenda eneagrama :np :tl :mu
+    repita :np [
+        parafrente :tl
+        paradireita :mu*360/:np]
+fim
+
+aprenda estrela_5p :np :tl :ang
+    repita 5 [
+        parafrente :tl
+        paraesquerda 108-:ang
+        parafrente :tl
+        paradireita 180-:ang]
+fim
+
+aprenda estrela :np :tl :ang
+    repita :np [
+        parafrente :tl
+        paraesquerda 180-:ang - 1080/:np
+        parafrente :tl
+        paradireita 180-:ang]
+fim

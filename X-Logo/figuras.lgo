@@ -1,0 +1,32 @@
+aprenda quadrado :tamlado
+    repita 4 [
+        parafrente :tamlado
+        paradireita 90]
+fim
+
+aprenda triângulo_equilátero :tamlado
+    repita 3 [
+        parafrente :tamlado
+        paradireita 120]
+fim
+
+aprenda quadrado_pintado :tl :cl :cp
+    atrlocal "clo cordolápis
+    mudecl :cl
+    quadrado :tl
+    usenada
+    paradireita 45
+    parafrente :tl/2
+    mudecl :cp
+    pinte
+    paratrás :tl/2
+    paraesquerda 45
+    uselápis
+    mudecl :clo 
+fim
+
+aprenda polígono_regular :nl :tl
+    repita :nl [
+        parafrente :tl
+        paradireita 360/:nl]
+fim

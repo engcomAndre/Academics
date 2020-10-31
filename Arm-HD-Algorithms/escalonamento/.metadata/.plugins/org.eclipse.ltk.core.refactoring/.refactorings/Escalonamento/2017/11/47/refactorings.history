@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;view.SelectionBox.learquivo().file&apos; in &apos;view.SelectionBox.learquivo()&apos; to field&#x0D;&#x0A;- Original project: &apos;Escalonamento&apos;&#x0D;&#x0A;- Original element: &apos;view.SelectionBox.learquivo().file&apos;&#x0D;&#x0A;- Field name: &apos;file&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;&#x0D;&#x0A;- Declare field &apos;static&apos;" description="Convert local variable &apos;file&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src&lt;view{SelectionBox.java" name="file" selection="421 48" stamp="1511649291737" static="true" version="1.0" visibility="2"/>
+</session>

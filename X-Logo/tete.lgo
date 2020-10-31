@@ -1,0 +1,98 @@
+
+aprenda mov_mouse
+atribua "postat pos
+se leiamouse = 0  [un mudepos posmouse 
+se leiamouse = 2 [menu mov_mouse]
+se leiacar  = 49 [opção1 mov_mouse]
+se leiacar  = 50 [opção2 mov_mouse]
+se leiacar  = 51 [opção3 mov_mouse]
+se leiacar  = 52 [opção4 mov_mouse]
+se leiacar  = 53 [opção5 mov_mouse]
+mov_mouse]
+fim
+
+
+aprenda cha_menu
+rotule [OPÇÃO 1 ]
+pt 15
+rotule [OPÇÃO 2 ]
+pt 15
+rotule [OPÇÃO 3]
+pt 15
+rotule [OPÇÃO 4]
+pt 15
+rotule [OPÇÃO 5]
+pf 60
+
+
+fim
+
+
+aprenda menu
+rotule [OPÇÃO 1 ]
+pt 15
+rotule [OPÇÃO 2 ]
+pt 15
+rotule [OPÇÃO 3]
+pt 15
+rotule [OPÇÃO 4]
+pt 15
+rotule [OPÇÃO 5]
+pf 60
+fim
+
+aprenda opção1
+atençãotat 3
+un
+mudepos posmouse
+mudecl 2 
+quadrado
+pinte
+pintezona 
+
+
+fim
+
+aprenda opção2
+atençãotat 4
+un
+mudepos posmouse
+mudecl 3
+quadrado  
+pinte
+fim
+
+
+aprenda opção3
+atençãotat 5
+un
+mudepos posmouse
+mudecl 4
+quadrado  
+pinte
+fim
+
+
+aprenda opção4
+atençãotat 6
+un
+mudepos posmouse
+mudecl 5
+quadrado
+pinte
+fim
+
+
+aprenda opção5
+atençãotat 7
+un
+mudepos posmouse
+mudecl 6
+quadrado
+pinte
+fim
+
+
+aprenda quadrado
+repita 4 [ul pf 100 pd 90 ]pf 10 pd 90 un pf 10 ul
+fim

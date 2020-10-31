@@ -1,0 +1,19 @@
+aprenda penta :tm
+  repita 5 [
+                  pf :tm 
+                  pd 144 
+                 ]
+
+fim
+
+aprenda estrela :tl
+  repita 5[                
+                pf :tl
+                pe 108
+                pf :tl
+                pd 144
+                 
+                ]  
+
+
+fim

@@ -1,0 +1,38 @@
+package model;
+
+import java.util.LinkedList;
+
+public class Estatistics {
+	private static double sum;
+	
+	
+	public static double mediaDesl(LinkedList<Integer> Fila) {
+		sum = 0;
+		for (int i = 0; i < Fila.size(); i++) {
+			sum += Fila.get(i);			
+		}
+		return sum/Fila.size();
+	}
+
+	public static double variance(double media,LinkedList<Integer> Fila) {
+		sum = 0;
+		for (int i = 0; i < Fila.size(); i++) {
+			sum += (media - Fila.get(i));			
+		}
+		return sum/Fila.size();
+	}
+	
+	public static double deslocamentos(LinkedList<Integer> Fila) {
+		sum = 0;
+		for (int i = 0; i < Fila.size(); i++) {
+			sum += Fila.get(i);			
+		}
+		return Math.sqrt(sum/Fila.size());
+	}
+	
+	public static double desvioPadrao(LinkedList<Integer> Fila) {
+		return Math.sqrt(variance(mediaDesl(Fila), Fila));		
+	}	
+
+
+}

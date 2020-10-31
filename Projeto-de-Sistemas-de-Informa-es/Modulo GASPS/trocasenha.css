@@ -1,0 +1,9 @@
+.redefine{
+height:80%;
+width:50%;	
+position:absolute;
+z-index:100;
+top:5%;
+background-color:#00ffff;
+font-family: 'Barlow Condensed', sans-serif;
+}

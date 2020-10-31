@@ -1,0 +1,59 @@
+package controller;
+
+import java.util.LinkedList;
+
+public class SSF {
+	//data FCFS algorithm
+	private LinkedList<Integer>callResquisitionsOrder ;		
+	private LinkedList<Integer>distances ;
+
+	public SSF(int initialPosition,LinkedList<Integer>Process){
+		this.callResquisitionsOrder = new LinkedList<>();
+		this.distances = new LinkedList<>();
+		this.schedulerSSF(initialPosition, Process);
+	}
+
+	public LinkedList<Integer> getCallRequisitionOrder(){		
+		return callResquisitionsOrder;
+	}
+
+	public LinkedList<Integer> getDistances(){
+		return distances;
+	}
+
+	private void schedulerSSF(int atualPosition,LinkedList<Integer>Process) {
+		int distance,prox = 0;
+		while(!Process.isEmpty()){			
+			callResquisitionsOrder.addLast(atualPosition);				
+
+			distance = Math.abs(atualPosition - Process.get(0));
+			prox = Process.get(0);
+			for(int i = 1;i < Process.size();i++) {//escolhendo menos distancia					
+				if(distance>= Math.abs(atualPosition - Process.get(i))) {
+					distance = Math.abs(atualPosition - Process.get(i));
+					prox = Process.get(i);
+
+				}
+			}
+			distances.addLast(distance);
+			atualPosition = Process.remove(Process.indexOf(prox));
+
+		}
+	}			
+
+	public void printData() {		
+		System.out.println("Processos Chamados    = "+this.callResquisitionsOrder);
+		System.out.println("Distancias            = "+this.distances);
+
+	}
+
+	@Override
+	public String toString() {
+		return "SSF "
+				+ "\n callResquisitionsOrder = "+ callResquisitionsOrder 
+				+ "\n distances = " + distances;
+	}
+
+}			
+
+

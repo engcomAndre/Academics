@@ -1,0 +1,148 @@
+package controller;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
+
+import javafx.scene.AmbientLight;
+import model.Estatistics;
+import view.Configure;
+
+public class CSCAN {
+	//data SCAN algorithm
+	private LinkedList<Integer>callResquisitionsOrder ;		
+	private LinkedList<Integer>distances ;
+	private int finalDisc;
+	public int scheduler;
+
+	public CSCAN(Configure configure,LinkedList<Integer>Process){
+		this.callResquisitionsOrder = new LinkedList<>();
+		this.distances = new LinkedList<>();		
+		this.finalDisc = configure.getQntdCiliders();
+		this.schedulerCSCAN(configure.getDiscArmInitialCilinder(), Process);
+	}
+
+	public LinkedList<Integer> getCallRequisitionOrder(){		
+		return callResquisitionsOrder;
+	}
+
+	public LinkedList<Integer> getDistances(){
+		return distances;
+	}
+
+	private void schedulerCSCAN(int atualPosition,LinkedList<Integer>Process) {
+
+		Process.sort(null);		
+
+		int i = 0;		
+		while(atualPosition >= Process.get(i) && i < Process.size()) {
+			i++;
+		}
+		//fatiando listas
+		LinkedList<Integer> minList = new LinkedList<>(Process.subList(0, i));
+//		Collections.sort(minList, new Comparator<Object>() {
+//			public int compare(Object num1, Object num2) {                
+//				return (Integer)num1 >= (Integer)num2?-1:1;
+//			}
+//		});
+		LinkedList<Integer>maiorList = new LinkedList<>(Process.subList(i, Process.size()));
+		LinkedList<Integer> list = null;
+		
+		
+		//subindo
+//		minList.sort(null);
+//		maiorList.sort(null);		
+//		minList.addFirst(0);
+//		maiorList.addLast(finalDisc-1);		
+//		maiorList.addAll(minList);		
+//		maiorList.addAll(minList);
+//		System.out.println(maiorList);
+		
+		
+		minList.addFirst(0);
+		maiorList.addLast(finalDisc-1);
+		
+		
+		
+		///////////////////
+		//descendo
+		
+		Collections.sort(minList, new Comparator<Object>() {
+			public int compare(Object num1, Object num2) {                
+				return (Integer)num1 >= (Integer)num2?-1:1;
+			}
+		});
+		
+		Collections.sort(maiorList, new Comparator<Object>() {
+			public int compare(Object num1, Object num2) {                
+				return (Integer)num1 >= (Integer)num2?-1:1;
+			}
+		});	
+		
+		System.out.println(minList);
+		minList.addAll(maiorList);
+		
+		System.out.println(minList);
+		
+		//////////////////////////		
+
+		while(!minList.isEmpty()) {		
+		callResquisitionsOrder.addLast(atualPosition);			
+		distances.addLast(Math.abs(atualPosition - minList.getFirst()));			
+		atualPosition = minList.removeFirst();			
+	}
+		
+		
+		
+		
+		
+		//subindo
+		
+		
+//		if((atualPosition - minList.getLast())>(maiorList.getFirst() - atualPosition)) {
+//			
+//			
+//			maiorList.addFirst(finalDisc);
+//			list.addAll(maiorList);			
+//						
+//			minList.addAll(maiorList);
+//			list = new LinkedList<>(maiorList);
+//			list = new LinkedList<>(minList);			
+//			scheduler = (atualPosition)+finalDisc+(finalDisc - maiorList.getFirst());
+//
+//		}
+//		else {
+//			maiorList.addAll(minList);
+//			int sentido = 1;
+//			System.out.println("subindo");
+//			list = new LinkedList<>(maiorList);
+//			scheduler = (finalDisc - atualPosition)+finalDisc+minList.getFirst();
+//
+//		}		
+	
+
+//		while(!list.isEmpty()) {		
+//			callResquisitionsOrder.addLast(atualPosition);			
+//			distances.addLast(Math.abs(atualPosition - list.getFirst()));			
+//			atualPosition = list.removeFirst();			
+//		}	
+	}
+
+
+	public String toString() {
+		String result = "Estatisticas para o Algoritmo de CSCAN"
+				+ "\n"+"Distancia Total = "+this.scheduler
+				+ "\n"+"Distancia Media = "+this.scheduler/(double)(callResquisitionsOrder.size())  
+				+ "\n"+"Tempo Medio     = "+(this.scheduler/(double)callResquisitionsOrder.size())*Configure.seekTime
+				+ "\n"+"Variancia       = "+(1+(int)Estatistics.variance((this.scheduler/(double)callResquisitionsOrder.size()), distances))
+				+ "\n"+"Desvio Padrão   = "+String.format("%.2f", (Estatistics.standardDeviation(distances)))
+				+ "\n"+"Requisições       \n"+callResquisitionsOrder.toString()
+				;
+		return result; 
+	}
+
+}
+
+

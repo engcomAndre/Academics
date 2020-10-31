@@ -1,0 +1,4 @@
+comandos para aproveitamento xlogo
+
+
+ld un escondetat mudepos  [-900 0] frente 25 frente 25 frente 25 frente 25 pf 450 pe 90 pf 25 simb 60

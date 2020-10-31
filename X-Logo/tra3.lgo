@@ -1,0 +1,47 @@
+aprenda des
+atat 1 pf 10
+atat 2 pd 90 pf 10
+atat 3 pd 45 pf 10
+atat 4 pd 30 pf 10
+
+fim
+
+
+aprenda c_des
+parasempre [des]
+fim
+aprenda caule
+mudepl 1 
+mudecl marrom 
+mudeel 25 
+    pf 100 
+    pt 50 
+    pd 60 
+mudeel 5 
+    pf 45 
+    pt 45 
+    pe 60 
+    pf 25 
+    pe 60 
+    pf 50 
+    pt 50 
+    pd 60 
+fim
+
+
+aprenda folha
+mudecl [100 255 100]  
+        atribua "x 1 repita 10 [pf :x pd :x atribua "x :x+2.3  ]  
+              pd (90-:x)  
+        atribua "x 1 
+            repita 10 [pf :x pd :x atribua "x :x+2.3  ]  
+mudeel 2 
+mudecl [0 100 0]
+            pd 116 pf 25 pd 30 pf 25 pt 25 pe 30 pf 25 pe 30 pf 25 pt 25 pd 30 pf 30 un pf 5 
+mudecl [100 2000 50]
+pinte
+pt 85
+pe 49.15
+
+
+fim

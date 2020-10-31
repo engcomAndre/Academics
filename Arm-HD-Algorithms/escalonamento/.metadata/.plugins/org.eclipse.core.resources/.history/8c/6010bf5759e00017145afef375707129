@@ -1,0 +1,74 @@
+package controller;
+
+
+import java.util.LinkedList;
+import java.util.Random;
+
+import model.DataIN;
+import model.DataOUT;
+import model.Estatistics;
+import model.Fcfs;
+import model.SSF;
+import view.Configure;
+
+
+public class Main {
+	public static void main(String[] argv) {
+		//StringIn();
+		int qntdCilinder = 100;
+		int discArmInitialCilinder = 7;
+		double seekTime = 1;
+		LinkedList <Integer> Process = DataIN.getProcessArray();		
+		
+		Configure configure =  new Configure(qntdCilinder, discArmInitialCilinder, seekTime, Process);
+		System.out.println(returnSCANData(configure));
+		//System.out.println(returnSSFData(configure));
+		
+	}
+	public static String returnSCANData(Configure configure) {
+		SCAN SCAN= new SCAN(configure,configure.getProcess());
+		String result = "Estatisticas para o Algoritmo de SCAN"
+						+ "\n  "+configure
+						+ "\n\n"+Estatistics.publicEstatistics(configure.getSeekTime(), SCAN.getDistances())
+						+ "\n  Sequencias de Chamada de Processos"
+						+ "\n     " +SCAN.getCallRequisitionOrder()
+						;
+		return result;
+	}
+	public static String returnSSFData(Configure configure) {
+		SSF SSF= new SSF(configure.getDiscArmInitialCilinder(),configure.getProcess());
+		String result = "Estatisticas para o Algoritmo de SSF"
+						+ "\n  "+configure
+						+ "\n\n"+Estatistics.publicEstatistics(configure.getSeekTime(), SSF.getDistances())
+						+ "\n  Sequencias de Chamada de Processos"
+						+ "\n     " +SSF.getCallRequisitionOrder()
+						;
+		return result;
+	}
+	
+	
+	
+	public static String returnFCFSData(Configure configure) {
+		Fcfs fcfs = new Fcfs(configure.getDiscArmInitialCilinder(),configure.getProcess());
+		String result = "Estatisticas para o Algoritmo de FCFS"
+						+ "\n  "+configure
+						+ "\n\n"+Estatistics.publicEstatistics(configure.getSeekTime(), fcfs.getDistances())
+						+ "\n  Sequencias de Chamada de Processos"
+						+ "\n     " +fcfs.getCallRequisitionOrder()
+						;
+		return result;
+	}
+	
+	public static void StringIn() {
+		String res  = "";
+		Random randint = new Random();
+		for (int i = 0; i < 1000; i++) {
+			res += randint.nextInt(100)+"-";			
+		}
+		DataOUT.writeFileOut(res);	
+		
+	}
+	
+
+}
+

@@ -1,0 +1,24 @@
+Banco de Dados:Condominio
+
+--------------Códigos das Consultas SQL--------------
+
+Consulta 1:
+
+SELECT CodUH,Condomino_Cod_Condomino FROM unidadeshabitacionais WHERE Condominio_CodCondominio = 1
+
+-----------------------------------------------------
+Consulta 2:
+
+SELECT condominio.Nome FROM condominio,unidadeshabitacionais WHERE condominio.CodCondominio = unidadeshabitacionais.Condominio_CodCondominio AND unidadeshabitacionais.Area > 100
+
+-----------------------------------------------------
+Consulta 3:
+
+SELECT cadastrogeraldepessoas.Nome FROM sindico,condomino,cadastrogeraldepessoas,unidadeshabitacionais WHERE sindico.Condomino_Cod_Condomino = condomino.Cod_Condomino 
+AND condomino.CadastroGeraldePessoas_CodPessoa = cadastrogeraldepessoas.CodPessoa AND unidadeshabitacionais.Condomino_Cod_Condomino = sindico.Condominio_CodCondominio
+AND unidadeshabitacionais.Area > 160
+-----------------------------------------------------
+Consulta 4:
+
+SELECT condomino.Cod_Condomino FROM condomino,unidadeshabitacionais WHERE condomino.Cod_Condomino = unidadeshabitacionais.Condomino_Cod_Condomino AND unidadeshabitacionais.Area > 160
+-----------------------------------------------------

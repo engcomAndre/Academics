@@ -1,0 +1,71 @@
+aprenda quadrado :tl
+    repita 4 [
+        parafrente :tl
+        paradireita 90]
+fim
+
+aprenda quad :tl
+    quadrado :tl
+fim
+
+aprenda quadrado_animado :tl
+    escondetat
+    animado
+    repita 100 [
+        quadrado :tl
+        veranimado
+        espere 1
+        useborracha
+        quadrado :tl
+        usenada
+        paradireita 90
+        parafrente 3
+        paraesquerda 90
+        uselápis
+        mudecl preto
+    ]
+    quadrado :tl
+    pareanimado
+fim
+
+aprenda tao :raio
+    círculo :raio
+    usenada
+    paraesquerda 90
+    parafrente :raio/2
+    arco :raio/2 direção direção+180
+    círculo :raio/5
+    pinte
+    paratrás :raio
+    arco :raio/2 direção+180 direção
+    círculo :raio/5
+    parafrente :raio/4
+    pinte
+    parafrente :raio/4
+    paradireita 90
+    uselápis
+fim
+
+aprenda tao_animado :raio :vel
+    animado
+    repita inteiro 360/:vel [
+        tao :raio+0.5*:vel*cv
+        veranimado
+        limpedesenho
+        paradireita contevezes*:vel
+    ]
+    #tao :raio+360/:vel
+    repita inteiro 360/:vel [
+        tao :raio+0.5*:vel*(360/:vel-cv)
+        veranimado
+        limpedesenho
+        paradireita contevezes*:vel
+    ]
+    tao :raio
+    pareanimado
+fim
+
+aprenda tao_infinito :raio :vel
+    parasempre [
+        tao_animado :raio :vel]
+fim

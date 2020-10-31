@@ -1,0 +1,174 @@
+aprenda quadv :tm
+#Desenha Quadrado de Cantos Arredondados e pinta de Verde
+
+repita 4[ul 
+              mudecl [100 200 100] 
+              pf :tm
+              pd 90 
+              un
+              pf :tm/3 
+              pe 90 
+              arco :tm/3 direção-90 direção 
+              pf :tm/3 
+              pd 90 ]
+
+                          pd 90 
+                          pf :tm/3 
+                          pinte 
+                          pt :tm/3
+                          pe 90
+
+fim
+
+
+aprenda cír :tm
+#Faz Um Cículo Vermelho de :tm tamanho
+mudecl vermelho 
+círculo :tm
+pinte
+fim
+
+aprenda mont :tm
+#Monta O Simbolo
+atribua "x pos
+pf :tm/3
+repita 3[quadv :tm pf :tm+:tm*4/5 ]
+
+un 
+pd 90 
+pf :tm*4.3/5
+pe 90 
+pf :tm*3/6
+#cír :tm/5*4 
+pt :tm*3/4
+pd 90 
+pt :tm*3/4
+pe 90
+atribua "d  3*(:tm+:tm*4/5 )
+mudepos :x
+
+fim
+
+aprenda mont1 :tm
+#Monta a 1ª coluna com quadrador de :tm tamanho
+atribua "x pos
+un
+pf :tm/3
+repita 3[quadv :tm pf :tm+:tm*4/5 ] 
+#pd 90 
+#pf :tm*4.3/5
+#pe 90
+desl_f :tm 
+pf :tm*3/6
+#cír :tm/5*4 
+pt :tm*3/4
+pd 90 
+pt :tm*3/4
+pe 90
+atribua "d  3*(:tm+:tm*4/5 )
+mudepos :x
+
+fim
+
+aprenda mont2 :tm
+#Monta a 2ªColuna de :tm tamanho
+#pd 90
+#pf :tm+:tm*4/5
+#pe 90
+desl_f :tm
+atribua "x2 pos
+repita 4[quadv :tm pf :tm+:tm*4/5 ] 
+mudepos :x2
+
+fim
+
+aprenda mont3 :tm
+#Monta a 3ªColuna de :tm tamanho
+
+#pd 90
+#pf :tm+:tm*4/5
+#pe 90
+desl_f :tm
+atribua "x3 pos
+pf :tm/3
+
+pf :tm+:tm*4/5 
+quadv :tm pf :tm+:tm*4/5 
+pf :tm+:tm*4/5 
+quadv :tm pf :tm+:tm*4/5 
+mudepos :x3
+fim
+aprenda quad_v2 :tm
+#Faz o quadrado sem linha e prenchimento somente para deslocamendo e alinhamento 
+repita 4[mudecl branco
+              pf :tm
+              pd 90 
+              un
+              pf :tm/3 
+              pe 90 
+              arco :tm/3 direção-90 direção 
+              pf :tm/3 
+              pd 90 ]
+
+
+
+fim
+
+aprenda simb :tm
+un
+mont1 :tm
+mont2 :tm
+mont3 :tm
+desl_f :tm
+nome :tm
+
+desl_f :tm
+pe 45 
+repita 50 [espere 4 
+                  pf :tm/11 
+                  pe 8.11 
+                  pf :tm/11
+                  pd 8.25] 
+
+
+cír :tm/5*4 
+
+fim
+
+aprenda desl_f :tm
+un
+pd 90
+pf :tm+:tm*4/5
+pe 90
+fim
+
+aprenda nome :tm
+PF :tm*1.8
+MUDEFONTE :tm 
+MUDECL PRETO 
+MUDEESTILO "NEGRITO 
+rotule "INSTITUTO\ FEDERAL\ DE 
+PT :tm*0.9 
+ROTULE "EDUCAÇÃO\ ,CIÊNCIA\ E\ TECNOLOGIA 
+PT :tm*0.9 
+MUDECL [100 200 100]
+rotule "CEARÁ 
+fim
+
+
+aprenda frente :tm
+mudedireção 90
+desl_f -:tm
+atribua "pos2 pos
+repita 80[espere  3 quadv :tm pf :tm+:tm*4/5 ] 
+mudepos :pos2
+
+
+
+fim
+
+
+
+aprenda mudiretorio
+mudediretório "C:\\Users\\IFCE\\Documents\\1ºSemestre\\Lógica\ de\ Programação\ I
+fim

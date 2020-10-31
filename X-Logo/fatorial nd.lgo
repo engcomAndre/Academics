@@ -1,0 +1,40 @@
+aprenda rep_fat :num
+  se :num = 0 [mo 1 pare]
+  atrlocal "res 1
+  repita :num [atrlocal "res :res*:num
+                         atrlocal "num :num - 1
+                        ]
+  mo :res
+
+fim
+
+aprenda enq_fat :num
+    se :num = 0 [mo 1 pare]
+    atrlocal "res 1
+    enquanto [:num > 1] [  
+                                          atrlocal "res :res*:num
+                                           atrlocal "num :num - 1
+                                          ]
+  mo :res
+
+
+fim
+
+aprenda fen_fat :num
+  se :num = 0 [mo 1 pare]
+  atrlocal "res 1
+  façaenquanto [  
+                           atrlocal "res :res*:num
+                           atrlocal "num :num - 1
+                           ] [:num > 1]
+  mo :res
+fim
+
+aprenda par_fat :num
+#  se :num = 0 [mo 1 pare]
+  para [
+             :num 1 10 1
+            ]
+
+mo :num
+fim

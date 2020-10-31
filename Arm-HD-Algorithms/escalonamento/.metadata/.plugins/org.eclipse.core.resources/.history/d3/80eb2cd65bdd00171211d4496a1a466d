@@ -1,0 +1,56 @@
+package controller;
+
+
+
+import java.rmi.Remote;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+import javax.swing.plaf.synth.SynthSpinnerUI;
+
+public class SSF {
+	//data FCFS algorithm
+		private LinkedList<Integer>callResquisitionsOrder ;		
+		private LinkedList<Integer>distances ;
+
+		public SSF(int initialPosition,LinkedList<Integer>Process){
+			this.callResquisitionsOrder = new LinkedList<>();
+			this.distances = new LinkedList<>();
+			this.schedulerSSF(initialPosition, Process);
+		}
+		
+		public LinkedList<Integer> getCallRequisitionOrder(){		
+			return callResquisitionsOrder;
+		}
+
+		public LinkedList<Integer> getDistances(){
+			return distances;
+		}
+
+		private void schedulerSSF(int atualPosition,LinkedList<Integer>Process) {
+			int index
+			while(!Process.isEmpty()){				
+				callResquisitionsOrder.addLast(atualPosition);
+				for(int i = 0;i < Process.size();i++) {
+										
+				}								
+			}
+		}	
+		
+
+		public void printData() {		
+			System.out.println("Processos Chamados    = "+this.callResquisitionsOrder);
+			System.out.println("Distancias            = "+this.distances);
+
+		}
+
+		@Override
+		public String toString() {
+			return "SSF "
+					+ "\n callResquisitionsOrder = "+ callResquisitionsOrder 
+					+ "\n distances = " + distances;
+		}
+		
+	}			
+
+

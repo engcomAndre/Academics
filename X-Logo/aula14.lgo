@@ -1,0 +1,94 @@
+# Versão iterativa
+aprenda sequencia :nt
+  atribua "x 1
+  repita :nt-1
+  [
+    atribua "x 2*:x
+  ]
+  saída :x
+fim
+
+# versão recursiva
+aprenda sequenciar :n
+  se :n=1 [saída 1]
+  saída 2*sequenciar :n-1
+fim
+
+# versão algébrica
+aprenda sequencia_alg :n
+  saída potência 2 :n-1
+fim
+
+aprenda fibo_rec :n
+  se :n=1 [saída 0]
+  se :n=2 [saída 1]
+  saída (fibo_rec :n-2) + fibo_rec :n-1 
+fim
+
+aprenda fibo_alg :n
+  atrlocal "a (1+raizq 5)/2
+  atrlocal "b (1-raizq 5)/2
+  atribua "a potência :a :n
+  atribua "b potência :b :n
+  saída arredonde (:a-:b)/raizq 5
+fim
+
+aprenda multi :a :b
+  se :b = 0 [saída 0]
+  saída :a + multi :a :b-1
+fim
+
+aprenda fatorial :n
+  se :n=0 [saída 1]
+  saída :n * fatorial :n-1
+fim
+
+aprenda soma_lista :lis
+  atrlocal "res 0
+  repita conte :lis
+  [
+    atribua "res :res + elem cv :lis
+  ]
+  saída :res
+fim
+
+aprenda soma_lista_rec :lis
+  se :lis = [] [saída 0]
+  saída (primeiro :lis) + soma_lista_rec semprimeiro :lis
+fim
+
+aprenda koch :tam :ger
+  se :ger = 0 [parafrente :tam pare]
+  koch :tam/3 :ger-1
+  paraesquerda 60
+  koch :tam/3 :ger-1
+  paradireita 120
+  koch :tam/3 :ger-1
+  paraesquerda 60
+  koch :tam/3 :ger-1
+fim
+
+aprenda koch2 :tam :ger
+  se :ger = 0 [parafrente :tam pare]
+  parafrente :tam/2 
+  paraesquerda 120
+  koch2 :tam/2 :ger-1
+  paradireita 120
+  koch2 :tam/2 :ger-1
+  paradireita 120
+  koch2 :tam/2 :ger-1
+  paraesquerda 120
+  parafrente :tam/2
+fim
+
+aprenda cesaro :tam :ger
+  atrlocal "x :tam / 2*(1+cos 85)
+  se :ger = 0 [parafrente :tam pare]
+  cesaro :x :ger-1
+  paraesquerda 85
+  cesaro :x :ger-1
+  paradireita 170
+  cesaro :x :ger-1
+  paraesquerda 85
+  cesaro :x :ger-1
+fim

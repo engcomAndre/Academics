@@ -1,0 +1,15 @@
+Observações:
+1  Pessoa pode ser somente ou um aluno,professor ou coordenador;
+2  Professores podem estar em varios departamentos
+3  Departamentos podem ter varios professores
+4  Professor podem possuir varios titulos
+5  Um mesmo titulo pode pertencer a varios professores
+6  Titulos podem ser'Tecnologo,Bacharel,Pos-Graduado,Mestrado,Doutorado'
+7  Disciplinas podem ter varios cursos;
+8  Cursos podem estar presentes em várias disciplinas;
+9  Uma Turma pode estar em somente uma Sala
+10 Um Aula pode ser dada em somente uma Sala
+11 Frequencia esta para cada aula
+12 Frequencia pode ter varias pessoas
+13 Avaliacao possui uma nota
+14 Cada Aluno 
